@@ -1,0 +1,27 @@
+# IO.Swagger.Model.NewClient
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**LegalName** | **string** |  | 
+**CommercialName** | **string** |  | 
+**RFC** | **string** |  | 
+**CreditDays** | **int?** |  | 
+**CreditAmount** | **double?** |  | 
+**PriceListID** | **Guid?** |  | 
+**AccountingNumber** | **string** |  | 
+**Email** | **string** |  | [optional] 
+**PaymentMethod** | **int?** |  | [optional] 
+**PaymentTerm** | **int?** |  | [optional] 
+**LocationID** | **Guid?** |  | [optional] 
+**SalesEmployeeID** | **Guid?** |  | [optional] 
+**CreditEmployeeID** | **Guid?** |  | [optional] 
+**Comment** | **string** |  | [optional] 
+**Address** | [**NewAddress**](NewAddress.md) |  | [optional] 
+**Telephone** | **string** |  | [optional] 
+**AccountNumber** | **string** |  | [optional] 
+**DefaultDiscount** | **double?** |  | [optional] 
+**Source** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

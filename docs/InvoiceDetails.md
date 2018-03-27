@@ -1,0 +1,48 @@
+# IO.Swagger.Model.InvoiceDetails
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ID** | **Guid?** |  | [optional] 
+**Series** | **string** |  | [optional] 
+**Number** | **long?** |  | [optional] 
+**ClientID** | **Guid?** |  | [optional] 
+**ClientName** | **string** |  | [optional] 
+**PaymentTerms** | **int?** |  | [optional] 
+**Status** | **string** |  | [optional] 
+**StatusCode** | **int?** |  | [optional] 
+**ClientPhoneNumber** | **string** |  | [optional] 
+**ClientContact** | **string** |  | [optional] 
+**RFC** | **string** |  | [optional] 
+**CreatedByID** | **Guid?** |  | [optional] 
+**CreatedByName** | **string** |  | [optional] 
+**CreationDate** | **DateTime?** |  | [optional] 
+**ApplicationDate** | **DateTime?** |  | [optional] 
+**PriceListID** | **Guid?** |  | [optional] 
+**PriceListName** | **string** |  | [optional] 
+**LocationID** | **Guid?** |  | [optional] 
+**LocationName** | **string** |  | [optional] 
+**WarehouseID** | **Guid?** |  | [optional] 
+**WarehouseName** | **string** |  | [optional] 
+**CFDIPaymentMethod** | **string** |  | [optional] 
+**CFDIPaymentTerm** | **string** |  | [optional] 
+**CFDIAccountNumber** | **string** |  | [optional] 
+**CurrencyName** | **string** |  | [optional] 
+**ExchangeRate** | **double?** |  | [optional] 
+**PurchaseOrder** | **string** |  | [optional] 
+**FiscalID** | **Guid?** |  | [optional] 
+**Address** | **string** |  | [optional] 
+**Comments** | **string** |  | [optional] 
+**Subtotal** | **double?** |  | [optional] 
+**Discount** | **double?** |  | [optional] 
+**VAT** | **double?** |  | [optional] 
+**IEPS** | **double?** |  | [optional] 
+**VATRet** | **double?** |  | [optional] 
+**ISRRet** | **double?** |  | [optional] 
+**Payments** | **double?** |  | [optional] 
+**CreditNotes** | **double?** |  | [optional] 
+**Products** | [**List&lt;InvoiceDetailsProduct&gt;**](InvoiceDetailsProduct.md) |  | [optional] 
+**Services** | [**List&lt;InvoiceDetailsService&gt;**](InvoiceDetailsService.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

@@ -1,0 +1,13 @@
+# IO.Swagger.Model.EditAccountingJournal
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ID** | **Guid?** |  | 
+**Date** | **DateTime?** |  | 
+**Comments** | **string** |  | [optional] 
+**LocationID** | **Guid?** |  | [optional] 
+**JournalItems** | [**List&lt;EditAccountingJournalItem&gt;**](EditAccountingJournalItem.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
