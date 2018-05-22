@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="prospectsaddprospect"></a>
 # **ProspectsAddProspect**
-> Guid? ProspectsAddProspect (Prospect newProspect)
+> Guid? ProspectsAddProspect (NewProspect newProspect)
 
 Agregar Prospecto
 
@@ -32,7 +32,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new ProspectsApi();
-            var newProspect = new Prospect(); // Prospect | 
+            var newProspect = new NewProspect(); // NewProspect | 
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newProspect** | [**Prospect**](Prospect.md)|  | 
+ **newProspect** | [**NewProspect**](NewProspect.md)|  | 
 
 ### Return type
 
@@ -130,7 +130,7 @@ No authorization required
 
 <a name="prospectseditclient"></a>
 # **ProspectsEditClient**
-> void ProspectsEditClient (Prospect prospect)
+> void ProspectsEditClient (EditProspect prospect)
 
 Editar Prospecto
 
@@ -149,7 +149,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new ProspectsApi();
-            var prospect = new Prospect(); // Prospect | 
+            var prospect = new EditProspect(); // EditProspect | 
 
             try
             {
@@ -169,7 +169,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prospect** | [**Prospect**](Prospect.md)|  | 
+ **prospect** | [**EditProspect**](EditProspect.md)|  | 
 
 ### Return type
 

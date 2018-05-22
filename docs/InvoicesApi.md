@@ -4,11 +4,11 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**InvoicesAddInvoice**](InvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar factura
-[**InvoicesAddPayment**](InvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a factura
+[**InvoicesAddInvoice**](InvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar Venta
+[**InvoicesAddPayment**](InvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a venta
 [**InvoicesDeleteInvoice**](InvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{id} | Eliminar factura
-[**InvoicesGetByID**](InvoicesApi.md#invoicesgetbyid) | **GET** /api/Invoices/{id} | Obtiene los detalles de una venta
-[**InvoicesGetByNumber**](InvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices | Obtiene los detalles de una venta
+[**InvoicesGet**](InvoicesApi.md#invoicesget) | **GET** /api/Invoices | Obtiene la lista de ventas.
+[**InvoicesGetByNumber**](InvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices/{idOrNumber} | Obtiene los detalles de una venta por número
 [**InvoicesGetPDF**](InvoicesApi.md#invoicesgetpdf) | **GET** /api/Invoices/{id}/pdf | Obtener el PDF de una venta
 [**InvoicesGetXML**](InvoicesApi.md#invoicesgetxml) | **GET** /api/Invoices/{id}/xml | Obtener el XML de una venta
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 # **InvoicesAddInvoice**
 > Guid? InvoicesAddInvoice (NewInvoice newInvoice)
 
-Agregar factura
+Agregar Venta
 
 ### Example
 ```csharp
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // Agregar factura
+                // Agregar Venta
                 Guid? result = apiInstance.InvoicesAddInvoice(newInvoice);
                 Debug.WriteLine(result);
             }
@@ -76,7 +76,7 @@ No authorization required
 # **InvoicesAddPayment**
 > void InvoicesAddPayment (NewPayment newPayment)
 
-Registrar pago a factura
+Registrar pago a venta
 
 ### Example
 ```csharp
@@ -97,7 +97,7 @@ namespace Example
 
             try
             {
-                // Registrar pago a factura
+                // Registrar pago a venta
                 apiInstance.InvoicesAddPayment(newPayment);
             }
             catch (Exception e)
@@ -188,11 +188,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="invoicesgetbyid"></a>
-# **InvoicesGetByID**
-> InvoiceDetails InvoicesGetByID (Guid? id)
+<a name="invoicesget"></a>
+# **InvoicesGet**
+> InvoiceListItemPage InvoicesGet (string filter = null, string orderby = null, int? top = null, int? skip = null)
 
-Obtiene los detalles de una venta
+Obtiene la lista de ventas.
+
+El filtro es opcional
 
 ### Example
 ```csharp
@@ -204,22 +206,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class InvoicesGetByIDExample
+    public class InvoicesGetExample
     {
         public void main()
         {
             var apiInstance = new InvoicesApi();
-            var id = new Guid?(); // Guid? | ID
+            var filter = filter_example;  // string | Filters the results, based on a Boolean condition. (optional) 
+            var orderby = orderby_example;  // string | Sorts the results. (optional) 
+            var top = 56;  // int? | Returns only the first n results. (optional) 
+            var skip = 56;  // int? | Skips the first n results. (optional) 
 
             try
             {
-                // Obtiene los detalles de una venta
-                InvoiceDetails result = apiInstance.InvoicesGetByID(id);
+                // Obtiene la lista de ventas.
+                InvoiceListItemPage result = apiInstance.InvoicesGet(filter, orderby, top, skip);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling InvoicesApi.InvoicesGetByID: " + e.Message );
+                Debug.Print("Exception when calling InvoicesApi.InvoicesGet: " + e.Message );
             }
         }
     }
@@ -230,11 +235,14 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Guid?**](Guid?.md)| ID | 
+ **filter** | **string**| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **string**| Sorts the results. | [optional] 
+ **top** | **int?**| Returns only the first n results. | [optional] 
+ **skip** | **int?**| Skips the first n results. | [optional] 
 
 ### Return type
 
-[**InvoiceDetails**](InvoiceDetails.md)
+[**InvoiceListItemPage**](InvoiceListItemPage.md)
 
 ### Authorization
 
@@ -243,15 +251,15 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="invoicesgetbynumber"></a>
 # **InvoicesGetByNumber**
-> InvoiceDetails InvoicesGetByNumber (string number)
+> InvoiceDetails InvoicesGetByNumber (string idOrNumber)
 
-Obtiene los detalles de una venta
+Obtiene los detalles de una venta por número
 
 ### Example
 ```csharp
@@ -268,12 +276,12 @@ namespace Example
         public void main()
         {
             var apiInstance = new InvoicesApi();
-            var number = number_example;  // string | Serie y Número
+            var idOrNumber = idOrNumber_example;  // string | 
 
             try
             {
-                // Obtiene los detalles de una venta
-                InvoiceDetails result = apiInstance.InvoicesGetByNumber(number);
+                // Obtiene los detalles de una venta por número
+                InvoiceDetails result = apiInstance.InvoicesGetByNumber(idOrNumber);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -289,7 +297,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **number** | **string**| Serie y Número | 
+ **idOrNumber** | **string**|  | 
 
 ### Return type
 
@@ -308,7 +316,7 @@ No authorization required
 
 <a name="invoicesgetpdf"></a>
 # **InvoicesGetPDF**
-> Object InvoicesGetPDF (Guid? id)
+> System.IO.Stream InvoicesGetPDF (Guid? id)
 
 Obtener el PDF de una venta
 
@@ -332,7 +340,7 @@ namespace Example
             try
             {
                 // Obtener el PDF de una venta
-                Object result = apiInstance.InvoicesGetPDF(id);
+                System.IO.Stream result = apiInstance.InvoicesGetPDF(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -352,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -361,7 +369,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

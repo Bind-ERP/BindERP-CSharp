@@ -5,20 +5,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddressID** | **Guid?** |  | 
 **ClientID** | **Guid?** |  | 
-**Comments** | **string** |  | [optional] 
 **CurrencyID** | **Guid?** |  | 
+**LocationID** | **Guid?** |  | 
+**OrderDate** | **DateTime?** |  | 
+**PriceListID** | **Guid?** |  | 
+**WarehouseID** | **Guid?** |  | 
+**Comments** | **string** |  | [optional] 
 **DiscountAmount** | **double?** |  | [optional] 
 **DiscountType** | **int?** |  | [optional] 
 **DocNumberID** | **Guid?** |  | [optional] 
 **ExchangeRate** | **double?** |  | [optional] 
 **ISRRate** | **double?** |  | [optional] 
-**LocationID** | **Guid?** |  | 
-**OrderDate** | **DateTime?** |  | 
-**PriceListID** | **Guid?** |  | 
 **PurchaseOrder** | **string** |  | [optional] 
 **VATRate** | **double?** |  | [optional] 
 **VATRetRate** | **double?** |  | [optional] 
-**WarehouseID** | **Guid?** |  | 
 **Emails** | **List&lt;string&gt;** |  | [optional] 
 **Products** | [**List&lt;NewOrderProduct&gt;**](NewOrderProduct.md) |  | [optional] 
 **Services** | [**List&lt;NewOrderService&gt;**](NewOrderService.md) |  | [optional] 

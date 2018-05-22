@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | **Guid?** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
-**CurrencyID** | **Guid?** |  | [optional] 
-**SATCompanyAccountID** | **Guid?** |  | [optional] 
-**MeasurementUnit** | **string** |  | [optional] 
+**ID** | **Guid?** |  | 
+**Code** | **string** |  | 
+**Title** | **string** |  | 
+**CurrencyID** | **Guid?** |  | 
+**SATCompanyAccountID** | **Guid?** |  | 
+**MeasurementUnit** | **string** |  | 
 **Description** | **string** |  | [optional] 
 **Category1ID** | **Guid?** |  | [optional] 
 **Category2ID** | **Guid?** |  | [optional] 
