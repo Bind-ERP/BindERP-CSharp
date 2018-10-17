@@ -104,6 +104,18 @@ namespace IO.Swagger.Model
         public string Code { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProductID
+        /// </summary>
+        [DataMember(Name="ProductID", EmitDefaultValue=false)]
+        public Guid? ProductID { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets Visible
+        /// </summary>
+        [DataMember(Name="Visible", EmitDefaultValue=false)]
+        public bool? Visible { get; private set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -121,6 +133,8 @@ namespace IO.Swagger.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  ProductID: ").Append(ProductID).Append("\n");
+            sb.Append("  Visible: ").Append(Visible).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -204,6 +218,16 @@ namespace IO.Swagger.Model
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
+                ) && 
+                (
+                    this.ProductID == input.ProductID ||
+                    (this.ProductID != null &&
+                    this.ProductID.Equals(input.ProductID))
+                ) && 
+                (
+                    this.Visible == input.Visible ||
+                    (this.Visible != null &&
+                    this.Visible.Equals(input.Visible))
                 );
         }
 
@@ -236,6 +260,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.Code != null)
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.ProductID != null)
+                    hashCode = hashCode * 59 + this.ProductID.GetHashCode();
+                if (this.Visible != null)
+                    hashCode = hashCode * 59 + this.Visible.GetHashCode();
                 return hashCode;
             }
         }

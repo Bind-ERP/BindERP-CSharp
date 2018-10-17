@@ -15,8 +15,10 @@ Name | Type | Description | Notes
 **SalesContact** | **string** |  | [optional] 
 **CreditContact** | **string** |  | [optional] 
 **Loctaion** | **string** |  | [optional] 
+**LoctaionID** | **Guid?** |  | [optional] 
 **Comments** | **string** |  | [optional] 
 **PriceList** | **string** |  | [optional] 
+**PriceListID** | **Guid?** |  | [optional] 
 **PaymentTermType** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Telephones** | **string** |  | [optional] 
@@ -25,6 +27,9 @@ Name | Type | Description | Notes
 **DefaultDiscount** | **double?** |  | [optional] 
 **ClientSource** | **string** |  | [optional] 
 **Account** | **string** |  | [optional] 
+**City** | **string** |  | [optional] 
+**State** | **string** |  | [optional] 
+**Addresses** | **List&lt;Guid?&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

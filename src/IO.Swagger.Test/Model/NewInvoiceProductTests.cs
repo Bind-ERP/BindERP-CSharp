@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Price'
         }
         /// <summary>
+        /// Test the property 'Qty'
+        /// </summary>
+        [Test]
+        public void QtyTest()
+        {
+            // TODO unit test for the property 'Qty'
+        }
+        /// <summary>
         /// Test the property 'VAT'
         /// </summary>
         [Test]
@@ -113,14 +121,6 @@ namespace IO.Swagger.Test
         public void IEPSTypeTest()
         {
             // TODO unit test for the property 'IEPSType'
-        }
-        /// <summary>
-        /// Test the property 'Qty'
-        /// </summary>
-        [Test]
-        public void QtyTest()
-        {
-            // TODO unit test for the property 'Qty'
         }
         /// <summary>
         /// Test the property 'Comments'
@@ -161,14 +161,6 @@ namespace IO.Swagger.Test
         public void OrderItemIDTest()
         {
             // TODO unit test for the property 'OrderItemID'
-        }
-        /// <summary>
-        /// Test the property 'Unit'
-        /// </summary>
-        [Test]
-        public void UnitTest()
-        {
-            // TODO unit test for the property 'Unit'
         }
 
     }

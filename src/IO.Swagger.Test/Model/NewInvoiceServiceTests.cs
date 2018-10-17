@@ -91,20 +91,20 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Price'
         }
         /// <summary>
-        /// Test the property 'VAT'
-        /// </summary>
-        [Test]
-        public void VATTest()
-        {
-            // TODO unit test for the property 'VAT'
-        }
-        /// <summary>
         /// Test the property 'Qty'
         /// </summary>
         [Test]
         public void QtyTest()
         {
             // TODO unit test for the property 'Qty'
+        }
+        /// <summary>
+        /// Test the property 'VAT'
+        /// </summary>
+        [Test]
+        public void VATTest()
+        {
+            // TODO unit test for the property 'VAT'
         }
         /// <summary>
         /// Test the property 'Comments'

@@ -5,7 +5,7 @@ All URIs are relative to *http://api.bind.com.mx*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**WebHooksAddWebHookSubscriptions**](WebHooksApi.md#webhooksaddwebhooksubscriptions) | **POST** /api/WebHookSubscriptions | Suscribirse a un WebHook
-[**WebHooksDeleteWebHookSubscriptioByID**](WebHooksApi.md#webhooksdeletewebhooksubscriptiobyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
+[**WebHooksDeleteWebHookSubscriptionByID**](WebHooksApi.md#webhooksdeletewebhooksubscriptionbyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
 [**WebHooksEditWebHookSubscription**](WebHooksApi.md#webhookseditwebhooksubscription) | **PUT** /api/WebHookSubscriptions | Editar suscripción a WebHook
 [**WebHooksGetWebHookSampleData**](WebHooksApi.md#webhooksgetwebhooksampledata) | **GET** /api/WebHooks/{eventID} | Obtiene un ejemplo del modelo de datos que envía el WebHook.
 [**WebHooksGetWebHookSubscriptions**](WebHooksApi.md#webhooksgetwebhooksubscriptions) | **GET** /api/WebHookSubscriptions | Obtiene la lista de su suscripciones a WebHooks
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="webhooksaddwebhooksubscriptions"></a>
 # **WebHooksAddWebHookSubscriptions**
-> Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription webHookSubscription)
+> Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription newWebHookSubscription)
 
 Suscribirse a un WebHook
 
@@ -33,12 +33,12 @@ namespace Example
         public void main()
         {
             var apiInstance = new WebHooksApi();
-            var webHookSubscription = new NewWebHookSubscription(); // NewWebHookSubscription | 
+            var newWebHookSubscription = new NewWebHookSubscription(); // NewWebHookSubscription | 
 
             try
             {
                 // Suscribirse a un WebHook
-                Object result = apiInstance.WebHooksAddWebHookSubscriptions(webHookSubscription);
+                Object result = apiInstance.WebHooksAddWebHookSubscriptions(newWebHookSubscription);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webHookSubscription** | [**NewWebHookSubscription**](NewWebHookSubscription.md)|  | 
+ **newWebHookSubscription** | [**NewWebHookSubscription**](NewWebHookSubscription.md)|  | 
 
 ### Return type
 
@@ -71,9 +71,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="webhooksdeletewebhooksubscriptiobyid"></a>
-# **WebHooksDeleteWebHookSubscriptioByID**
-> void WebHooksDeleteWebHookSubscriptioByID (string id)
+<a name="webhooksdeletewebhooksubscriptionbyid"></a>
+# **WebHooksDeleteWebHookSubscriptionByID**
+> void WebHooksDeleteWebHookSubscriptionByID (string id, Guid? subscriptionID = null)
 
 Borrar suscripción a WebHook
 
@@ -87,21 +87,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class WebHooksDeleteWebHookSubscriptioByIDExample
+    public class WebHooksDeleteWebHookSubscriptionByIDExample
     {
         public void main()
         {
             var apiInstance = new WebHooksApi();
             var id = id_example;  // string | 
+            var subscriptionID = new Guid?(); // Guid? |  (optional) 
 
             try
             {
                 // Borrar suscripción a WebHook
-                apiInstance.WebHooksDeleteWebHookSubscriptioByID(id);
+                apiInstance.WebHooksDeleteWebHookSubscriptionByID(id, subscriptionID);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebHooksApi.WebHooksDeleteWebHookSubscriptioByID: " + e.Message );
+                Debug.Print("Exception when calling WebHooksApi.WebHooksDeleteWebHookSubscriptionByID: " + e.Message );
             }
         }
     }
@@ -113,6 +114,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  | 
+ **subscriptionID** | [**Guid?**](Guid?.md)|  | [optional] 
 
 ### Return type
 
@@ -131,7 +133,7 @@ No authorization required
 
 <a name="webhookseditwebhooksubscription"></a>
 # **WebHooksEditWebHookSubscription**
-> void WebHooksEditWebHookSubscription (NewWebHookSubscription webHookSubscription)
+> void WebHooksEditWebHookSubscription (EditWebHookSubscription webHookSubscription)
 
 Editar suscripción a WebHook
 
@@ -150,7 +152,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new WebHooksApi();
-            var webHookSubscription = new NewWebHookSubscription(); // NewWebHookSubscription | 
+            var webHookSubscription = new EditWebHookSubscription(); // EditWebHookSubscription | 
 
             try
             {
@@ -170,7 +172,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webHookSubscription** | [**NewWebHookSubscription**](NewWebHookSubscription.md)|  | 
+ **webHookSubscription** | [**EditWebHookSubscription**](EditWebHookSubscription.md)|  | 
 
 ### Return type
 

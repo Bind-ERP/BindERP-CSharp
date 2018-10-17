@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ID** | **Guid?** |  | [optional] 
 **ProductID** | **Guid?** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **IndexNumber** | **int?** |  | [optional] 

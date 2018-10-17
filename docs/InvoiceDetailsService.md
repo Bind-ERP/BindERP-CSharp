@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ID** | **Guid?** |  | [optional] 
 **IndexNumber** | **int?** |  | [optional] 
 **ServiceID** | **Guid?** |  | [optional] 
 **Name** | **string** |  | [optional] 

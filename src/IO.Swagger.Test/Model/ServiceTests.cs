@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Code'
         }
         /// <summary>
+        /// Test the property 'Cost'
+        /// </summary>
+        [Test]
+        public void CostTest()
+        {
+            // TODO unit test for the property 'Cost'
+        }
+        /// <summary>
         /// Test the property 'Title'
         /// </summary>
         [Test]

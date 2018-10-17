@@ -71,9 +71,9 @@ namespace IO.Swagger.Test
         public void ProspectsAddProspectTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Prospect newProspect = null;
+            //NewProspect newProspect = null;
             //var response = instance.ProspectsAddProspect(newProspect);
-            //Assert.IsInstanceOf<Guid?> (response, "response is Guid?");
+            //Assert.IsInstanceOf<Object> (response, "response is Object");
         }
         
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Test
         public void ProspectsEditClientTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Prospect prospect = null;
+            //EditProspect prospect = null;
             //instance.ProspectsEditClient(prospect);
             
         }

@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **IEPSRate** | **double?** |  | [optional] 
 **Type** | **int?** |  | [optional] 
 **ProductionAuto** | **bool?** |  | [optional] 
+**Volume** | **double?** |  | [optional] 
+**Weight** | **double?** |  | [optional] 
 **Prices** | [**ProductPrices**](ProductPrices.md) |  | [optional] 
 **Inventories** | [**List&lt;ProductInventories&gt;**](ProductInventories.md) |  | [optional] 
 **AlternativeUnits** | [**List&lt;ProductAlternativeUnits&gt;**](ProductAlternativeUnits.md) |  | [optional] 

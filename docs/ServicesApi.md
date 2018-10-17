@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ServicesAddProduct**](ServicesApi.md#servicesaddproduct) | **POST** /api/Services | Agregar Concepto de Venta
 [**ServicesDeleteByID**](ServicesApi.md#servicesdeletebyid) | **DELETE** /api/Services/{id} | Borrar Servicio
 [**ServicesEditProduct**](ServicesApi.md#serviceseditproduct) | **PUT** /api/Services | Editar Concepto de Venta
+[**ServicesGetDetail**](ServicesApi.md#servicesgetdetail) | **GET** /api/Services/{id} | Obtiene los detalles de un servicio.
 [**ServicesGetServices**](ServicesApi.md#servicesgetservices) | **GET** /api/Services | Obtiene la lista de conceptos de venta.
 
 
@@ -182,6 +183,65 @@ No authorization required
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="servicesgetdetail"></a>
+# **ServicesGetDetail**
+> ServiceDetails ServicesGetDetail (Guid? id)
+
+Obtiene los detalles de un servicio.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ServicesGetDetailExample
+    {
+        public void main()
+        {
+            var apiInstance = new ServicesApi();
+            var id = new Guid?(); // Guid? | 
+
+            try
+            {
+                // Obtiene los detalles de un servicio.
+                ServiceDetails result = apiInstance.ServicesGetDetail(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ServicesApi.ServicesGetDetail: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)|  | 
+
+### Return type
+
+[**ServiceDetails**](ServiceDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

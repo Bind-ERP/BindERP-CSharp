@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ID** | **Guid?** |  | [optional] 
 **Code** | **string** |  | [optional] 
+**Cost** | **double?** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **CreationDate** | **DateTime?** |  | [optional] 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CreditAmount** | **double?** |  | 
 **PriceListID** | **Guid?** |  | 
 **AccountingNumber** | **string** |  | 
+**Address** | [**NewAddress**](NewAddress.md) |  | 
 **Email** | **string** |  | [optional] 
 **PaymentMethod** | **int?** |  | [optional] 
 **PaymentTerm** | **int?** |  | [optional] 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **SalesEmployeeID** | **Guid?** |  | [optional] 
 **CreditEmployeeID** | **Guid?** |  | [optional] 
 **Comment** | **string** |  | [optional] 
-**Address** | [**NewAddress**](NewAddress.md) |  | [optional] 
 **Telephone** | **string** |  | [optional] 
 **AccountNumber** | **string** |  | [optional] 
 **DefaultDiscount** | **double?** |  | [optional] 

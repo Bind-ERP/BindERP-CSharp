@@ -38,8 +38,6 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NewActivity" /> class.
         /// </summary>
-        /// <param name="ExternalID">ExternalID.</param>
-        /// <param name="ExternalIDType">ExternalIDType.</param>
         /// <param name="Comment">Comment (required).</param>
         /// <param name="StartDate">StartDate (required).</param>
         /// <param name="EndDate">EndDate (required).</param>
@@ -50,7 +48,9 @@ namespace IO.Swagger.Model
         /// <param name="RepeatInterval">RepeatInterval.</param>
         /// <param name="RepeatType">RepeatType.</param>
         /// <param name="Repetitions">Repetitions.</param>
-        public NewActivity(Guid? ExternalID = default(Guid?), int? ExternalIDType = default(int?), string Comment = default(string), DateTime? StartDate = default(DateTime?), DateTime? EndDate = default(DateTime?), Guid? EventType = default(Guid?), bool? IsPublic = default(bool?), string Title = default(string), bool? Repeatable = default(bool?), int? RepeatInterval = default(int?), int? RepeatType = default(int?), int? Repetitions = default(int?))
+        /// <param name="ExternalID">ExternalID.</param>
+        /// <param name="ExternalIDType">ExternalIDType.</param>
+        public NewActivity(string Comment = default(string), DateTime? StartDate = default(DateTime?), DateTime? EndDate = default(DateTime?), Guid? EventType = default(Guid?), bool? IsPublic = default(bool?), string Title = default(string), bool? Repeatable = default(bool?), int? RepeatInterval = default(int?), int? RepeatType = default(int?), int? Repetitions = default(int?), Guid? ExternalID = default(Guid?), int? ExternalIDType = default(int?))
         {
             // to ensure "Comment" is required (not null)
             if (Comment == null)
@@ -115,25 +115,13 @@ namespace IO.Swagger.Model
             {
                 this.Repeatable = Repeatable;
             }
-            this.ExternalID = ExternalID;
-            this.ExternalIDType = ExternalIDType;
             this.RepeatInterval = RepeatInterval;
             this.RepeatType = RepeatType;
             this.Repetitions = Repetitions;
+            this.ExternalID = ExternalID;
+            this.ExternalIDType = ExternalIDType;
         }
         
-        /// <summary>
-        /// Gets or Sets ExternalID
-        /// </summary>
-        [DataMember(Name="ExternalID", EmitDefaultValue=false)]
-        public Guid? ExternalID { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExternalIDType
-        /// </summary>
-        [DataMember(Name="ExternalIDType", EmitDefaultValue=false)]
-        public int? ExternalIDType { get; set; }
-
         /// <summary>
         /// Gets or Sets Comment
         /// </summary>
@@ -195,6 +183,18 @@ namespace IO.Swagger.Model
         public int? Repetitions { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExternalID
+        /// </summary>
+        [DataMember(Name="ExternalID", EmitDefaultValue=false)]
+        public Guid? ExternalID { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalIDType
+        /// </summary>
+        [DataMember(Name="ExternalIDType", EmitDefaultValue=false)]
+        public int? ExternalIDType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -202,8 +202,6 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NewActivity {\n");
-            sb.Append("  ExternalID: ").Append(ExternalID).Append("\n");
-            sb.Append("  ExternalIDType: ").Append(ExternalIDType).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
@@ -214,6 +212,8 @@ namespace IO.Swagger.Model
             sb.Append("  RepeatInterval: ").Append(RepeatInterval).Append("\n");
             sb.Append("  RepeatType: ").Append(RepeatType).Append("\n");
             sb.Append("  Repetitions: ").Append(Repetitions).Append("\n");
+            sb.Append("  ExternalID: ").Append(ExternalID).Append("\n");
+            sb.Append("  ExternalIDType: ").Append(ExternalIDType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,16 +248,6 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
-                (
-                    this.ExternalID == input.ExternalID ||
-                    (this.ExternalID != null &&
-                    this.ExternalID.Equals(input.ExternalID))
-                ) && 
-                (
-                    this.ExternalIDType == input.ExternalIDType ||
-                    (this.ExternalIDType != null &&
-                    this.ExternalIDType.Equals(input.ExternalIDType))
-                ) && 
                 (
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
@@ -307,6 +297,16 @@ namespace IO.Swagger.Model
                     this.Repetitions == input.Repetitions ||
                     (this.Repetitions != null &&
                     this.Repetitions.Equals(input.Repetitions))
+                ) && 
+                (
+                    this.ExternalID == input.ExternalID ||
+                    (this.ExternalID != null &&
+                    this.ExternalID.Equals(input.ExternalID))
+                ) && 
+                (
+                    this.ExternalIDType == input.ExternalIDType ||
+                    (this.ExternalIDType != null &&
+                    this.ExternalIDType.Equals(input.ExternalIDType))
                 );
         }
 
@@ -319,10 +319,6 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ExternalID != null)
-                    hashCode = hashCode * 59 + this.ExternalID.GetHashCode();
-                if (this.ExternalIDType != null)
-                    hashCode = hashCode * 59 + this.ExternalIDType.GetHashCode();
                 if (this.Comment != null)
                     hashCode = hashCode * 59 + this.Comment.GetHashCode();
                 if (this.StartDate != null)
@@ -343,6 +339,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.RepeatType.GetHashCode();
                 if (this.Repetitions != null)
                     hashCode = hashCode * 59 + this.Repetitions.GetHashCode();
+                if (this.ExternalID != null)
+                    hashCode = hashCode * 59 + this.ExternalID.GetHashCode();
+                if (this.ExternalIDType != null)
+                    hashCode = hashCode * 59 + this.ExternalIDType.GetHashCode();
                 return hashCode;
             }
         }

@@ -25,39 +25,37 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Prospect
+    /// NewProspect
     /// </summary>
     [DataContract]
-    public partial class Prospect :  IEquatable<Prospect>, IValidatableObject
+    public partial class NewProspect :  IEquatable<NewProspect>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Prospect" /> class.
+        /// Initializes a new instance of the <see cref="NewProspect" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Prospect() { }
+        protected NewProspect() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Prospect" /> class.
+        /// Initializes a new instance of the <see cref="NewProspect" /> class.
         /// </summary>
-        /// <param name="ID">ID.</param>
+        /// <param name="Name">Name (required).</param>
         /// <param name="Comments">Comments.</param>
         /// <param name="Company">Company.</param>
         /// <param name="Email">Email.</param>
         /// <param name="IsPublic">IsPublic.</param>
         /// <param name="Phone">Phone.</param>
         /// <param name="PhoneExt">PhoneExt.</param>
-        /// <param name="Name">Name (required).</param>
-        public Prospect(Guid? ID = default(Guid?), string Comments = default(string), string Company = default(string), string Email = default(string), bool? IsPublic = default(bool?), string Phone = default(string), string PhoneExt = default(string), string Name = default(string))
+        public NewProspect(string Name = default(string), string Comments = default(string), string Company = default(string), string Email = default(string), bool? IsPublic = default(bool?), string Phone = default(string), string PhoneExt = default(string))
         {
             // to ensure "Name" is required (not null)
             if (Name == null)
             {
-                throw new InvalidDataException("Name is a required property for Prospect and cannot be null");
+                throw new InvalidDataException("Name is a required property for NewProspect and cannot be null");
             }
             else
             {
                 this.Name = Name;
             }
-            this.ID = ID;
             this.Comments = Comments;
             this.Company = Company;
             this.Email = Email;
@@ -67,10 +65,10 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// Gets or Sets ID
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="ID", EmitDefaultValue=false)]
-        public Guid? ID { get; set; }
+        [DataMember(Name="Name", EmitDefaultValue=false)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
@@ -109,27 +107,20 @@ namespace IO.Swagger.Model
         public string PhoneExt { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name="Name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Prospect {\n");
-            sb.Append("  ID: ").Append(ID).Append("\n");
+            sb.Append("class NewProspect {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  IsPublic: ").Append(IsPublic).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  PhoneExt: ").Append(PhoneExt).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,24 +141,24 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Prospect);
+            return this.Equals(input as NewProspect);
         }
 
         /// <summary>
-        /// Returns true if Prospect instances are equal
+        /// Returns true if NewProspect instances are equal
         /// </summary>
-        /// <param name="input">Instance of Prospect to be compared</param>
+        /// <param name="input">Instance of NewProspect to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Prospect input)
+        public bool Equals(NewProspect input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ID == input.ID ||
-                    (this.ID != null &&
-                    this.ID.Equals(input.ID))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.Comments == input.Comments ||
@@ -198,11 +189,6 @@ namespace IO.Swagger.Model
                     this.PhoneExt == input.PhoneExt ||
                     (this.PhoneExt != null &&
                     this.PhoneExt.Equals(input.PhoneExt))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -215,8 +201,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ID != null)
-                    hashCode = hashCode * 59 + this.ID.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Comments != null)
                     hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.Company != null)
@@ -229,8 +215,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Phone.GetHashCode();
                 if (this.PhoneExt != null)
                     hashCode = hashCode * 59 + this.PhoneExt.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

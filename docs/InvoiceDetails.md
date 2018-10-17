@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ID** | **Guid?** |  | [optional] 
+**UUID** | **Guid?** |  | [optional] 
 **Series** | **string** |  | [optional] 
 **Number** | **long?** |  | [optional] 
 **ClientID** | **Guid?** |  | [optional] 

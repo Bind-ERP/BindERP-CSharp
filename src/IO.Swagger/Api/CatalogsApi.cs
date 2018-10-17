@@ -71,6 +71,35 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;Category1&gt;</returns>
         ApiResponse<List<Category1>> CatalogsGetCategoriesWithHttpInfo ();
         /// <summary>
+        /// Obtiene la lista de Ciudades por estado.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>CityPage</returns>
+        CityPage CatalogsGetCities (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of CityPage</returns>
+        ApiResponse<CityPage> CatalogsGetCitiesWithHttpInfo (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null);
+        /// <summary>
         /// Obtiene la lista de monedas.
         /// </summary>
         /// <remarks>
@@ -173,6 +202,33 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;Series&gt;</returns>
         ApiResponse<List<Series>> CatalogsGetSeriesWithHttpInfo (int? docType);
         /// <summary>
+        /// Obtiene la lista de Estados.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>StatePage</returns>
+        StatePage CatalogsGetStates (string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtiene la lista de Estados.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of StatePage</returns>
+        ApiResponse<StatePage> CatalogsGetStatesWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null);
+        /// <summary>
         /// Obtiene la lista de usuarios.
         /// </summary>
         /// <remarks>
@@ -247,6 +303,35 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Category1&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Category1>>> CatalogsGetCategoriesAsyncWithHttpInfo ();
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of CityPage</returns>
+        System.Threading.Tasks.Task<CityPage> CatalogsGetCitiesAsync (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (CityPage)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CityPage>> CatalogsGetCitiesAsyncWithHttpInfo (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
         /// Obtiene la lista de monedas.
         /// </summary>
@@ -349,6 +434,33 @@ namespace IO.Swagger.Api
         /// <param name="docType"></param>
         /// <returns>Task of ApiResponse (List&lt;Series&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Series>>> CatalogsGetSeriesAsyncWithHttpInfo (int? docType);
+        /// <summary>
+        /// Obtiene la lista de Estados.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of StatePage</returns>
+        System.Threading.Tasks.Task<StatePage> CatalogsGetStatesAsync (string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtiene la lista de Estados.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (StatePage)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StatePage>> CatalogsGetStatesAsyncWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
         /// Obtiene la lista de usuarios.
         /// </summary>
@@ -748,6 +860,165 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<Category1>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<Category1>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Category1>)));
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>CityPage</returns>
+        public CityPage CatalogsGetCities (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<CityPage> localVarResponse = CatalogsGetCitiesWithHttpInfo(stateID, filter, orderby, top, skip);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of CityPage</returns>
+        public ApiResponse< CityPage > CatalogsGetCitiesWithHttpInfo (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+            // verify the required parameter 'stateID' is set
+            if (stateID == null)
+                throw new ApiException(400, "Missing required parameter 'stateID' when calling CatalogsApi->CatalogsGetCities");
+
+            var localVarPath = "/api/Cities";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (stateID != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stateID", stateID)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CatalogsGetCities", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CityPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CityPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CityPage)));
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of CityPage</returns>
+        public async System.Threading.Tasks.Task<CityPage> CatalogsGetCitiesAsync (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<CityPage> localVarResponse = await CatalogsGetCitiesAsyncWithHttpInfo(stateID, filter, orderby, top, skip);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Ciudades por estado. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="stateID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (CityPage)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CityPage>> CatalogsGetCitiesAsyncWithHttpInfo (Guid? stateID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+            // verify the required parameter 'stateID' is set
+            if (stateID == null)
+                throw new ApiException(400, "Missing required parameter 'stateID' when calling CatalogsApi->CatalogsGetCities");
+
+            var localVarPath = "/api/Cities";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (stateID != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "stateID", stateID)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CatalogsGetCities", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CityPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CityPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CityPage)));
         }
 
         /// <summary>
@@ -1328,6 +1599,153 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<Series>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<Series>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Series>)));
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Estados. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>StatePage</returns>
+        public StatePage CatalogsGetStates (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<StatePage> localVarResponse = CatalogsGetStatesWithHttpInfo(filter, orderby, top, skip);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Estados. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of StatePage</returns>
+        public ApiResponse< StatePage > CatalogsGetStatesWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+
+            var localVarPath = "/api/States";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CatalogsGetStates", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StatePage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StatePage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StatePage)));
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Estados. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of StatePage</returns>
+        public async System.Threading.Tasks.Task<StatePage> CatalogsGetStatesAsync (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<StatePage> localVarResponse = await CatalogsGetStatesAsyncWithHttpInfo(filter, orderby, top, skip);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Obtiene la lista de Estados. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (StatePage)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<StatePage>> CatalogsGetStatesAsyncWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+
+            var localVarPath = "/api/States";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CatalogsGetStates", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StatePage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StatePage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StatePage)));
         }
 
         /// <summary>

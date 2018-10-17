@@ -44,20 +44,20 @@ namespace IO.Swagger.Model
         /// <param name="RFC">RFC (required).</param>
         /// <param name="CreditDays">CreditDays (required).</param>
         /// <param name="CreditAmount">CreditAmount (required).</param>
+        /// <param name="PriceListID">PriceListID (required).</param>
+        /// <param name="AccountingNumber">AccountingNumber (required).</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentTerm">PaymentTerm.</param>
         /// <param name="LocationID">LocationID.</param>
         /// <param name="SalesEmployeeID">SalesEmployeeID.</param>
         /// <param name="CreditEmployeeID">CreditEmployeeID.</param>
-        /// <param name="PriceListID">PriceListID (required).</param>
         /// <param name="Comment">Comment.</param>
         /// <param name="Telephone">Telephone.</param>
         /// <param name="Email">Email.</param>
         /// <param name="AccountNumber">AccountNumber.</param>
         /// <param name="DefaultDiscount">DefaultDiscount.</param>
         /// <param name="Source">Source.</param>
-        /// <param name="AccountingNumber">AccountingNumber (required).</param>
-        public EditClient(Guid? ID = default(Guid?), string LegalName = default(string), string CommercialName = default(string), string RFC = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), int? PaymentMethod = default(int?), int? PaymentTerm = default(int?), Guid? LocationID = default(Guid?), Guid? SalesEmployeeID = default(Guid?), Guid? CreditEmployeeID = default(Guid?), Guid? PriceListID = default(Guid?), string Comment = default(string), string Telephone = default(string), string Email = default(string), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string Source = default(string), string AccountingNumber = default(string))
+        public EditClient(Guid? ID = default(Guid?), string LegalName = default(string), string CommercialName = default(string), string RFC = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), Guid? PriceListID = default(Guid?), string AccountingNumber = default(string), int? PaymentMethod = default(int?), int? PaymentTerm = default(int?), Guid? LocationID = default(Guid?), Guid? SalesEmployeeID = default(Guid?), Guid? CreditEmployeeID = default(Guid?), string Comment = default(string), string Telephone = default(string), string Email = default(string), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string Source = default(string))
         {
             // to ensure "ID" is required (not null)
             if (ID == null)
@@ -181,6 +181,18 @@ namespace IO.Swagger.Model
         public double? CreditAmount { get; set; }
 
         /// <summary>
+        /// Gets or Sets PriceListID
+        /// </summary>
+        [DataMember(Name="PriceListID", EmitDefaultValue=false)]
+        public Guid? PriceListID { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountingNumber
+        /// </summary>
+        [DataMember(Name="AccountingNumber", EmitDefaultValue=false)]
+        public string AccountingNumber { get; set; }
+
+        /// <summary>
         /// Gets or Sets PaymentMethod
         /// </summary>
         [DataMember(Name="PaymentMethod", EmitDefaultValue=false)]
@@ -209,12 +221,6 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="CreditEmployeeID", EmitDefaultValue=false)]
         public Guid? CreditEmployeeID { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PriceListID
-        /// </summary>
-        [DataMember(Name="PriceListID", EmitDefaultValue=false)]
-        public Guid? PriceListID { get; set; }
 
         /// <summary>
         /// Gets or Sets Comment
@@ -253,12 +259,6 @@ namespace IO.Swagger.Model
         public string Source { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountingNumber
-        /// </summary>
-        [DataMember(Name="AccountingNumber", EmitDefaultValue=false)]
-        public string AccountingNumber { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -272,19 +272,19 @@ namespace IO.Swagger.Model
             sb.Append("  RFC: ").Append(RFC).Append("\n");
             sb.Append("  CreditDays: ").Append(CreditDays).Append("\n");
             sb.Append("  CreditAmount: ").Append(CreditAmount).Append("\n");
+            sb.Append("  PriceListID: ").Append(PriceListID).Append("\n");
+            sb.Append("  AccountingNumber: ").Append(AccountingNumber).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentTerm: ").Append(PaymentTerm).Append("\n");
             sb.Append("  LocationID: ").Append(LocationID).Append("\n");
             sb.Append("  SalesEmployeeID: ").Append(SalesEmployeeID).Append("\n");
             sb.Append("  CreditEmployeeID: ").Append(CreditEmployeeID).Append("\n");
-            sb.Append("  PriceListID: ").Append(PriceListID).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Telephone: ").Append(Telephone).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  DefaultDiscount: ").Append(DefaultDiscount).Append("\n");
             sb.Append("  Source: ").Append(Source).Append("\n");
-            sb.Append("  AccountingNumber: ").Append(AccountingNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -350,6 +350,16 @@ namespace IO.Swagger.Model
                     this.CreditAmount.Equals(input.CreditAmount))
                 ) && 
                 (
+                    this.PriceListID == input.PriceListID ||
+                    (this.PriceListID != null &&
+                    this.PriceListID.Equals(input.PriceListID))
+                ) && 
+                (
+                    this.AccountingNumber == input.AccountingNumber ||
+                    (this.AccountingNumber != null &&
+                    this.AccountingNumber.Equals(input.AccountingNumber))
+                ) && 
+                (
                     this.PaymentMethod == input.PaymentMethod ||
                     (this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(input.PaymentMethod))
@@ -373,11 +383,6 @@ namespace IO.Swagger.Model
                     this.CreditEmployeeID == input.CreditEmployeeID ||
                     (this.CreditEmployeeID != null &&
                     this.CreditEmployeeID.Equals(input.CreditEmployeeID))
-                ) && 
-                (
-                    this.PriceListID == input.PriceListID ||
-                    (this.PriceListID != null &&
-                    this.PriceListID.Equals(input.PriceListID))
                 ) && 
                 (
                     this.Comment == input.Comment ||
@@ -408,11 +413,6 @@ namespace IO.Swagger.Model
                     this.Source == input.Source ||
                     (this.Source != null &&
                     this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.AccountingNumber == input.AccountingNumber ||
-                    (this.AccountingNumber != null &&
-                    this.AccountingNumber.Equals(input.AccountingNumber))
                 );
         }
 
@@ -437,6 +437,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.CreditDays.GetHashCode();
                 if (this.CreditAmount != null)
                     hashCode = hashCode * 59 + this.CreditAmount.GetHashCode();
+                if (this.PriceListID != null)
+                    hashCode = hashCode * 59 + this.PriceListID.GetHashCode();
+                if (this.AccountingNumber != null)
+                    hashCode = hashCode * 59 + this.AccountingNumber.GetHashCode();
                 if (this.PaymentMethod != null)
                     hashCode = hashCode * 59 + this.PaymentMethod.GetHashCode();
                 if (this.PaymentTerm != null)
@@ -447,8 +451,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.SalesEmployeeID.GetHashCode();
                 if (this.CreditEmployeeID != null)
                     hashCode = hashCode * 59 + this.CreditEmployeeID.GetHashCode();
-                if (this.PriceListID != null)
-                    hashCode = hashCode * 59 + this.PriceListID.GetHashCode();
                 if (this.Comment != null)
                     hashCode = hashCode * 59 + this.Comment.GetHashCode();
                 if (this.Telephone != null)
@@ -461,8 +463,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.DefaultDiscount.GetHashCode();
                 if (this.Source != null)
                     hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.AccountingNumber != null)
-                    hashCode = hashCode * 59 + this.AccountingNumber.GetHashCode();
                 return hashCode;
             }
         }

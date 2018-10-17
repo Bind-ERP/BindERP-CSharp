@@ -4,15 +4,15 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AccountsAddClient**](AccountsApi.md#accountsaddclient) | **POST** /api/Accounts | Agregar Cuenta Contable
+[**AccountsAddAccount**](AccountsApi.md#accountsaddaccount) | **POST** /api/Accounts | Agregar Cuenta Contable
 [**AccountsDeleteAccount**](AccountsApi.md#accountsdeleteaccount) | **DELETE** /api/Accounts/{id} | Borrar Cuenta Contable
+[**AccountsGet**](AccountsApi.md#accountsget) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 [**AccountsGetAccountCategories**](AccountsApi.md#accountsgetaccountcategories) | **GET** /api/AccountCategories | Obtiene las categorías de cuentas contables.
-[**AccountsGetPriceLists**](AccountsApi.md#accountsgetpricelists) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 
 
-<a name="accountsaddclient"></a>
-# **AccountsAddClient**
-> Guid? AccountsAddClient (NewAccount newAccount)
+<a name="accountsaddaccount"></a>
+# **AccountsAddAccount**
+> Guid? AccountsAddAccount (NewAccount newAccount)
 
 Agregar Cuenta Contable
 
@@ -26,7 +26,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class AccountsAddClientExample
+    public class AccountsAddAccountExample
     {
         public void main()
         {
@@ -36,12 +36,12 @@ namespace Example
             try
             {
                 // Agregar Cuenta Contable
-                Guid? result = apiInstance.AccountsAddClient(newAccount);
+                Guid? result = apiInstance.AccountsAddAccount(newAccount);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AccountsApi.AccountsAddClient: " + e.Message );
+                Debug.Print("Exception when calling AccountsApi.AccountsAddAccount: " + e.Message );
             }
         }
     }
@@ -129,6 +129,71 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="accountsget"></a>
+# **AccountsGet**
+> AccountPage AccountsGet (string filter = null, string orderby = null, int? top = null, int? skip = null)
+
+Obtiene la lista de cuentas contables.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class AccountsGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new AccountsApi();
+            var filter = filter_example;  // string | Filters the results, based on a Boolean condition. (optional) 
+            var orderby = orderby_example;  // string | Sorts the results. (optional) 
+            var top = 56;  // int? | Returns only the first n results. (optional) 
+            var skip = 56;  // int? | Skips the first n results. (optional) 
+
+            try
+            {
+                // Obtiene la lista de cuentas contables.
+                AccountPage result = apiInstance.AccountsGet(filter, orderby, top, skip);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.AccountsGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string**| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **string**| Sorts the results. | [optional] 
+ **top** | **int?**| Returns only the first n results. | [optional] 
+ **skip** | **int?**| Skips the first n results. | [optional] 
+
+### Return type
+
+[**AccountPage**](AccountPage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="accountsgetaccountcategories"></a>
 # **AccountsGetAccountCategories**
 > AccountCategories AccountsGetAccountCategories ()
@@ -181,71 +246,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="accountsgetpricelists"></a>
-# **AccountsGetPriceLists**
-> AccountPage AccountsGetPriceLists (string filter = null, string orderby = null, int? top = null, int? skip = null)
-
-Obtiene la lista de cuentas contables.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class AccountsGetPriceListsExample
-    {
-        public void main()
-        {
-            var apiInstance = new AccountsApi();
-            var filter = filter_example;  // string | Filters the results, based on a Boolean condition. (optional) 
-            var orderby = orderby_example;  // string | Sorts the results. (optional) 
-            var top = 56;  // int? | Returns only the first n results. (optional) 
-            var skip = 56;  // int? | Skips the first n results. (optional) 
-
-            try
-            {
-                // Obtiene la lista de cuentas contables.
-                AccountPage result = apiInstance.AccountsGetPriceLists(filter, orderby, top, skip);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AccountsApi.AccountsGetPriceLists: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filters the results, based on a Boolean condition. | [optional] 
- **orderby** | **string**| Sorts the results. | [optional] 
- **top** | **int?**| Returns only the first n results. | [optional] 
- **skip** | **int?**| Skips the first n results. | [optional] 
-
-### Return type
-
-[**AccountPage**](AccountPage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

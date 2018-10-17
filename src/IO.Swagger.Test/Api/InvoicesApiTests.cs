@@ -95,21 +95,24 @@ namespace IO.Swagger.Test
         public void InvoicesDeleteInvoiceTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Guid? id = null;
-            //instance.InvoicesDeleteInvoice(id);
+            //string idOrNumber = null;
+            //instance.InvoicesDeleteInvoice(idOrNumber);
             
         }
         
         /// <summary>
-        /// Test InvoicesGetByID
+        /// Test InvoicesGet
         /// </summary>
         [Test]
-        public void InvoicesGetByIDTest()
+        public void InvoicesGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Guid? id = null;
-            //var response = instance.InvoicesGetByID(id);
-            //Assert.IsInstanceOf<InvoiceDetails> (response, "response is InvoiceDetails");
+            //string filter = null;
+            //string orderby = null;
+            //int? top = null;
+            //int? skip = null;
+            //var response = instance.InvoicesGet(filter, orderby, top, skip);
+            //Assert.IsInstanceOf<InvoiceListItemPage> (response, "response is InvoiceListItemPage");
         }
         
         /// <summary>
@@ -119,8 +122,8 @@ namespace IO.Swagger.Test
         public void InvoicesGetByNumberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string number = null;
-            //var response = instance.InvoicesGetByNumber(number);
+            //string idOrNumber = null;
+            //var response = instance.InvoicesGetByNumber(idOrNumber);
             //Assert.IsInstanceOf<InvoiceDetails> (response, "response is InvoiceDetails");
         }
         
@@ -133,7 +136,23 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //Guid? id = null;
             //var response = instance.InvoicesGetPDF(id);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<System.IO.Stream> (response, "response is System.IO.Stream");
+        }
+        
+        /// <summary>
+        /// Test InvoicesGetPayment
+        /// </summary>
+        [Test]
+        public void InvoicesGetPaymentTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? invoiceID = null;
+            //string filter = null;
+            //string orderby = null;
+            //int? top = null;
+            //int? skip = null;
+            //var response = instance.InvoicesGetPayment(invoiceID, filter, orderby, top, skip);
+            //Assert.IsInstanceOf<PaymentListItemPage> (response, "response is PaymentListItemPage");
         }
         
         /// <summary>

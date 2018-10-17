@@ -49,6 +49,7 @@ namespace IO.Swagger.Model
         /// <param name="ChargeVAT">ChargeVAT.</param>
         /// <param name="Number">Number.</param>
         /// <param name="PricingType">PricingType.</param>
+        /// <param name="PricingTypeText">PricingTypeText.</param>
         /// <param name="Unit">Unit.</param>
         /// <param name="CurrencyID">CurrencyID.</param>
         /// <param name="CurrencyCode">CurrencyCode.</param>
@@ -56,7 +57,9 @@ namespace IO.Swagger.Model
         /// <param name="IEPSRate">IEPSRate.</param>
         /// <param name="Type">Type.</param>
         /// <param name="ProductionAuto">ProductionAuto.</param>
-        public Product(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), double? Cost = default(double?), string SKU = default(string), string Comments = default(string), int? CostType = default(int?), Guid? Category1ID = default(Guid?), Guid? Category2ID = default(Guid?), Guid? Category3ID = default(Guid?), double? CurrentInventory = default(double?), bool? ChargeVAT = default(bool?), int? Number = default(int?), int? PricingType = default(int?), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), int? PurchaseType = default(int?), double? IEPSRate = default(double?), int? Type = default(int?), bool? ProductionAuto = default(bool?))
+        /// <param name="Volume">Volume.</param>
+        /// <param name="Weight">Weight.</param>
+        public Product(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), double? Cost = default(double?), string SKU = default(string), string Comments = default(string), int? CostType = default(int?), Guid? Category1ID = default(Guid?), Guid? Category2ID = default(Guid?), Guid? Category3ID = default(Guid?), double? CurrentInventory = default(double?), bool? ChargeVAT = default(bool?), int? Number = default(int?), int? PricingType = default(int?), string PricingTypeText = default(string), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), int? PurchaseType = default(int?), double? IEPSRate = default(double?), int? Type = default(int?), bool? ProductionAuto = default(bool?), double? Volume = default(double?), double? Weight = default(double?))
         {
             this.ID = ID;
             this.Code = Code;
@@ -74,6 +77,7 @@ namespace IO.Swagger.Model
             this.ChargeVAT = ChargeVAT;
             this.Number = Number;
             this.PricingType = PricingType;
+            this.PricingTypeText = PricingTypeText;
             this.Unit = Unit;
             this.CurrencyID = CurrencyID;
             this.CurrencyCode = CurrencyCode;
@@ -81,6 +85,8 @@ namespace IO.Swagger.Model
             this.IEPSRate = IEPSRate;
             this.Type = Type;
             this.ProductionAuto = ProductionAuto;
+            this.Volume = Volume;
+            this.Weight = Weight;
         }
         
         /// <summary>
@@ -189,7 +195,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets PricingTypeText
         /// </summary>
         [DataMember(Name="PricingTypeText", EmitDefaultValue=false)]
-        public string PricingTypeText { get; private set; }
+        public string PricingTypeText { get; set; }
 
         /// <summary>
         /// Gets or Sets Unit
@@ -246,6 +252,18 @@ namespace IO.Swagger.Model
         public bool? ProductionAuto { get; set; }
 
         /// <summary>
+        /// Gets or Sets Volume
+        /// </summary>
+        [DataMember(Name="Volume", EmitDefaultValue=false)]
+        public double? Volume { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Weight
+        /// </summary>
+        [DataMember(Name="Weight", EmitDefaultValue=false)]
+        public double? Weight { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -280,6 +298,8 @@ namespace IO.Swagger.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TypeText: ").Append(TypeText).Append("\n");
             sb.Append("  ProductionAuto: ").Append(ProductionAuto).Append("\n");
+            sb.Append("  Volume: ").Append(Volume).Append("\n");
+            sb.Append("  Weight: ").Append(Weight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -448,6 +468,16 @@ namespace IO.Swagger.Model
                     this.ProductionAuto == input.ProductionAuto ||
                     (this.ProductionAuto != null &&
                     this.ProductionAuto.Equals(input.ProductionAuto))
+                ) && 
+                (
+                    this.Volume == input.Volume ||
+                    (this.Volume != null &&
+                    this.Volume.Equals(input.Volume))
+                ) && 
+                (
+                    this.Weight == input.Weight ||
+                    (this.Weight != null &&
+                    this.Weight.Equals(input.Weight))
                 );
         }
 
@@ -514,6 +544,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.TypeText.GetHashCode();
                 if (this.ProductionAuto != null)
                     hashCode = hashCode * 59 + this.ProductionAuto.GetHashCode();
+                if (this.Volume != null)
+                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.Weight != null)
+                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 return hashCode;
             }
         }

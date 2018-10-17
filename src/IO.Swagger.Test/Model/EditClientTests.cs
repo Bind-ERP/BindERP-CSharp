@@ -115,6 +115,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'CreditAmount'
         }
         /// <summary>
+        /// Test the property 'PriceListID'
+        /// </summary>
+        [Test]
+        public void PriceListIDTest()
+        {
+            // TODO unit test for the property 'PriceListID'
+        }
+        /// <summary>
+        /// Test the property 'AccountingNumber'
+        /// </summary>
+        [Test]
+        public void AccountingNumberTest()
+        {
+            // TODO unit test for the property 'AccountingNumber'
+        }
+        /// <summary>
         /// Test the property 'PaymentMethod'
         /// </summary>
         [Test]
@@ -153,14 +169,6 @@ namespace IO.Swagger.Test
         public void CreditEmployeeIDTest()
         {
             // TODO unit test for the property 'CreditEmployeeID'
-        }
-        /// <summary>
-        /// Test the property 'PriceListID'
-        /// </summary>
-        [Test]
-        public void PriceListIDTest()
-        {
-            // TODO unit test for the property 'PriceListID'
         }
         /// <summary>
         /// Test the property 'Comment'
@@ -209,14 +217,6 @@ namespace IO.Swagger.Test
         public void SourceTest()
         {
             // TODO unit test for the property 'Source'
-        }
-        /// <summary>
-        /// Test the property 'AccountingNumber'
-        /// </summary>
-        [Test]
-        public void AccountingNumberTest()
-        {
-            // TODO unit test for the property 'AccountingNumber'
         }
 
     }

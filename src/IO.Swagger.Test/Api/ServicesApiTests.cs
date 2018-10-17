@@ -101,6 +101,18 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test ServicesGetDetail
+        /// </summary>
+        [Test]
+        public void ServicesGetDetailTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //var response = instance.ServicesGetDetail(id);
+            //Assert.IsInstanceOf<ServiceDetails> (response, "response is ServiceDetails");
+        }
+        
+        /// <summary>
         /// Test ServicesGetServices
         /// </summary>
         [Test]

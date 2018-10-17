@@ -40,9 +40,8 @@ namespace IO.Swagger.Model
         /// <param name="RFC">RFC.</param>
         /// <param name="Email">Email.</param>
         /// <param name="Phone">Phone.</param>
-        /// <param name="City">City.</param>
         /// <param name="NextContactDate">NextContactDate.</param>
-        public ClientListItem(Guid? ID = default(Guid?), long? Number = default(long?), string ClientName = default(string), string LegalName = default(string), string RFC = default(string), string Email = default(string), string Phone = default(string), string City = default(string), DateTime? NextContactDate = default(DateTime?))
+        public ClientListItem(Guid? ID = default(Guid?), long? Number = default(long?), string ClientName = default(string), string LegalName = default(string), string RFC = default(string), string Email = default(string), string Phone = default(string), DateTime? NextContactDate = default(DateTime?))
         {
             this.ID = ID;
             this.Number = Number;
@@ -51,7 +50,6 @@ namespace IO.Swagger.Model
             this.RFC = RFC;
             this.Email = Email;
             this.Phone = Phone;
-            this.City = City;
             this.NextContactDate = NextContactDate;
         }
         
@@ -98,12 +96,6 @@ namespace IO.Swagger.Model
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
-        /// </summary>
-        [DataMember(Name="City", EmitDefaultValue=false)]
-        public string City { get; set; }
-
-        /// <summary>
         /// Gets or Sets NextContactDate
         /// </summary>
         [DataMember(Name="NextContactDate", EmitDefaultValue=false)]
@@ -124,7 +116,6 @@ namespace IO.Swagger.Model
             sb.Append("  RFC: ").Append(RFC).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
-            sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  NextContactDate: ").Append(NextContactDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -196,11 +187,6 @@ namespace IO.Swagger.Model
                     this.Phone.Equals(input.Phone))
                 ) && 
                 (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
                     this.NextContactDate == input.NextContactDate ||
                     (this.NextContactDate != null &&
                     this.NextContactDate.Equals(input.NextContactDate))
@@ -230,8 +216,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.Phone != null)
                     hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
                 if (this.NextContactDate != null)
                     hashCode = hashCode * 59 + this.NextContactDate.GetHashCode();
                 return hashCode;

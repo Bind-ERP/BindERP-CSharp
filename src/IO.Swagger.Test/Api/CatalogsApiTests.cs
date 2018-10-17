@@ -91,6 +91,22 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test CatalogsGetCities
+        /// </summary>
+        [Test]
+        public void CatalogsGetCitiesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? stateID = null;
+            //string filter = null;
+            //string orderby = null;
+            //int? top = null;
+            //int? skip = null;
+            //var response = instance.CatalogsGetCities(stateID, filter, orderby, top, skip);
+            //Assert.IsInstanceOf<CityPage> (response, "response is CityPage");
+        }
+        
+        /// <summary>
         /// Test CatalogsGetCurrencies
         /// </summary>
         [Test]
@@ -145,6 +161,21 @@ namespace IO.Swagger.Test
             //int? docType = null;
             //var response = instance.CatalogsGetSeries(docType);
             //Assert.IsInstanceOf<List<Series>> (response, "response is List<Series>");
+        }
+        
+        /// <summary>
+        /// Test CatalogsGetStates
+        /// </summary>
+        [Test]
+        public void CatalogsGetStatesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string orderby = null;
+            //int? top = null;
+            //int? skip = null;
+            //var response = instance.CatalogsGetStates(filter, orderby, top, skip);
+            //Assert.IsInstanceOf<StatePage> (response, "response is StatePage");
         }
         
         /// <summary>

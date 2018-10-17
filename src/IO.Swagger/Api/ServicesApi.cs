@@ -88,6 +88,27 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ServicesEditProductWithHttpInfo (EditService service);
         /// <summary>
+        /// Obtiene los detalles de un servicio.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ServiceDetails</returns>
+        ServiceDetails ServicesGetDetail (Guid? id);
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of ServiceDetails</returns>
+        ApiResponse<ServiceDetails> ServicesGetDetailWithHttpInfo (Guid? id);
+        /// <summary>
         /// Obtiene la lista de conceptos de venta.
         /// </summary>
         /// <remarks>
@@ -179,6 +200,27 @@ namespace IO.Swagger.Api
         /// <param name="service"></param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ServicesEditProductAsyncWithHttpInfo (EditService service);
+        /// <summary>
+        /// Obtiene los detalles de un servicio.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ServiceDetails</returns>
+        System.Threading.Tasks.Task<ServiceDetails> ServicesGetDetailAsync (Guid? id);
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ApiResponse (ServiceDetails)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceDetails>> ServicesGetDetailAsyncWithHttpInfo (Guid? id);
         /// <summary>
         /// Obtiene la lista de conceptos de venta.
         /// </summary>
@@ -749,6 +791,145 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ServiceDetails</returns>
+        public ServiceDetails ServicesGetDetail (Guid? id)
+        {
+             ApiResponse<ServiceDetails> localVarResponse = ServicesGetDetailWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of ServiceDetails</returns>
+        public ApiResponse< ServiceDetails > ServicesGetDetailWithHttpInfo (Guid? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling ServicesApi->ServicesGetDetail");
+
+            var localVarPath = "/api/Services/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ServicesGetDetail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ServiceDetails>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ServiceDetails) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceDetails)));
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ServiceDetails</returns>
+        public async System.Threading.Tasks.Task<ServiceDetails> ServicesGetDetailAsync (Guid? id)
+        {
+             ApiResponse<ServiceDetails> localVarResponse = await ServicesGetDetailAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de un servicio. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ApiResponse (ServiceDetails)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ServiceDetails>> ServicesGetDetailAsyncWithHttpInfo (Guid? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling ServicesApi->ServicesGetDetail");
+
+            var localVarPath = "/api/Services/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ServicesGetDetail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ServiceDetails>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ServiceDetails) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceDetails)));
         }
 
         /// <summary>

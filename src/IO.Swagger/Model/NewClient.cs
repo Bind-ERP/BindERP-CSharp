@@ -45,6 +45,7 @@ namespace IO.Swagger.Model
         /// <param name="CreditAmount">CreditAmount (required).</param>
         /// <param name="PriceListID">PriceListID (required).</param>
         /// <param name="AccountingNumber">AccountingNumber (required).</param>
+        /// <param name="Address">Address (required).</param>
         /// <param name="Email">Email.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentTerm">PaymentTerm.</param>
@@ -52,12 +53,11 @@ namespace IO.Swagger.Model
         /// <param name="SalesEmployeeID">SalesEmployeeID.</param>
         /// <param name="CreditEmployeeID">CreditEmployeeID.</param>
         /// <param name="Comment">Comment.</param>
-        /// <param name="Address">Address.</param>
         /// <param name="Telephone">Telephone.</param>
         /// <param name="AccountNumber">AccountNumber.</param>
         /// <param name="DefaultDiscount">DefaultDiscount.</param>
         /// <param name="Source">Source.</param>
-        public NewClient(string LegalName = default(string), string CommercialName = default(string), string RFC = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), Guid? PriceListID = default(Guid?), string AccountingNumber = default(string), string Email = default(string), int? PaymentMethod = default(int?), int? PaymentTerm = default(int?), Guid? LocationID = default(Guid?), Guid? SalesEmployeeID = default(Guid?), Guid? CreditEmployeeID = default(Guid?), string Comment = default(string), NewAddress Address = default(NewAddress), string Telephone = default(string), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string Source = default(string))
+        public NewClient(string LegalName = default(string), string CommercialName = default(string), string RFC = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), Guid? PriceListID = default(Guid?), string AccountingNumber = default(string), NewAddress Address = default(NewAddress), string Email = default(string), int? PaymentMethod = default(int?), int? PaymentTerm = default(int?), Guid? LocationID = default(Guid?), Guid? SalesEmployeeID = default(Guid?), Guid? CreditEmployeeID = default(Guid?), string Comment = default(string), string Telephone = default(string), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string Source = default(string))
         {
             // to ensure "LegalName" is required (not null)
             if (LegalName == null)
@@ -122,6 +122,15 @@ namespace IO.Swagger.Model
             {
                 this.AccountingNumber = AccountingNumber;
             }
+            // to ensure "Address" is required (not null)
+            if (Address == null)
+            {
+                throw new InvalidDataException("Address is a required property for NewClient and cannot be null");
+            }
+            else
+            {
+                this.Address = Address;
+            }
             this.Email = Email;
             this.PaymentMethod = PaymentMethod;
             this.PaymentTerm = PaymentTerm;
@@ -129,7 +138,6 @@ namespace IO.Swagger.Model
             this.SalesEmployeeID = SalesEmployeeID;
             this.CreditEmployeeID = CreditEmployeeID;
             this.Comment = Comment;
-            this.Address = Address;
             this.Telephone = Telephone;
             this.AccountNumber = AccountNumber;
             this.DefaultDiscount = DefaultDiscount;
@@ -179,6 +187,12 @@ namespace IO.Swagger.Model
         public string AccountingNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets Address
+        /// </summary>
+        [DataMember(Name="Address", EmitDefaultValue=false)]
+        public NewAddress Address { get; set; }
+
+        /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name="Email", EmitDefaultValue=false)]
@@ -221,12 +235,6 @@ namespace IO.Swagger.Model
         public string Comment { get; set; }
 
         /// <summary>
-        /// Gets or Sets Address
-        /// </summary>
-        [DataMember(Name="Address", EmitDefaultValue=false)]
-        public NewAddress Address { get; set; }
-
-        /// <summary>
         /// Gets or Sets Telephone
         /// </summary>
         [DataMember(Name="Telephone", EmitDefaultValue=false)]
@@ -265,6 +273,7 @@ namespace IO.Swagger.Model
             sb.Append("  CreditAmount: ").Append(CreditAmount).Append("\n");
             sb.Append("  PriceListID: ").Append(PriceListID).Append("\n");
             sb.Append("  AccountingNumber: ").Append(AccountingNumber).Append("\n");
+            sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentTerm: ").Append(PaymentTerm).Append("\n");
@@ -272,7 +281,6 @@ namespace IO.Swagger.Model
             sb.Append("  SalesEmployeeID: ").Append(SalesEmployeeID).Append("\n");
             sb.Append("  CreditEmployeeID: ").Append(CreditEmployeeID).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
-            sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Telephone: ").Append(Telephone).Append("\n");
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  DefaultDiscount: ").Append(DefaultDiscount).Append("\n");
@@ -347,6 +355,11 @@ namespace IO.Swagger.Model
                     this.AccountingNumber.Equals(input.AccountingNumber))
                 ) && 
                 (
+                    this.Address == input.Address ||
+                    (this.Address != null &&
+                    this.Address.Equals(input.Address))
+                ) && 
+                (
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
@@ -380,11 +393,6 @@ namespace IO.Swagger.Model
                     this.Comment == input.Comment ||
                     (this.Comment != null &&
                     this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
                 ) && 
                 (
                     this.Telephone == input.Telephone ||
@@ -431,6 +439,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.PriceListID.GetHashCode();
                 if (this.AccountingNumber != null)
                     hashCode = hashCode * 59 + this.AccountingNumber.GetHashCode();
+                if (this.Address != null)
+                    hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.Email != null)
                     hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.PaymentMethod != null)
@@ -445,8 +455,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.CreditEmployeeID.GetHashCode();
                 if (this.Comment != null)
                     hashCode = hashCode * 59 + this.Comment.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.Telephone != null)
                     hashCode = hashCode * 59 + this.Telephone.GetHashCode();
                 if (this.AccountNumber != null)

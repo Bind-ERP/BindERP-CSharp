@@ -101,18 +101,20 @@ Class | Method | HTTP request | Description
 *AccountingJournalsApi* | [**AccountingJournalsDeleteAccountingJournal**](docs/AccountingJournalsApi.md#accountingjournalsdeleteaccountingjournal) | **DELETE** /api/AccountingJournals | Eliminar póliza contable
 *AccountingJournalsApi* | [**AccountingJournalsEditAccountingJournal**](docs/AccountingJournalsApi.md#accountingjournalseditaccountingjournal) | **PUT** /api/AccountingJournals | Editar póliza contable
 *AccountingJournalsApi* | [**AccountingJournalsGet**](docs/AccountingJournalsApi.md#accountingjournalsget) | **GET** /api/AccountingJournals | Obtiene la lista de pólizas contables.
-*AccountsApi* | [**AccountsAddClient**](docs/AccountsApi.md#accountsaddclient) | **POST** /api/Accounts | Agregar Cuenta Contable
+*AccountsApi* | [**AccountsAddAccount**](docs/AccountsApi.md#accountsaddaccount) | **POST** /api/Accounts | Agregar Cuenta Contable
 *AccountsApi* | [**AccountsDeleteAccount**](docs/AccountsApi.md#accountsdeleteaccount) | **DELETE** /api/Accounts/{id} | Borrar Cuenta Contable
+*AccountsApi* | [**AccountsGet**](docs/AccountsApi.md#accountsget) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 *AccountsApi* | [**AccountsGetAccountCategories**](docs/AccountsApi.md#accountsgetaccountcategories) | **GET** /api/AccountCategories | Obtiene las categorías de cuentas contables.
-*AccountsApi* | [**AccountsGetPriceLists**](docs/AccountsApi.md#accountsgetpricelists) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 *ActivitiesApi* | [**ActivitiesAddActivity**](docs/ActivitiesApi.md#activitiesaddactivity) | **POST** /api/Activities | Agregar actividad
 *BankAccountsApi* | [**BankAccountsGet**](docs/BankAccountsApi.md#bankaccountsget) | **GET** /api/BankAccounts | Obtiene la lista de cuentas bancarias.
 *CatalogsApi* | [**CatalogsGetBanks**](docs/CatalogsApi.md#catalogsgetbanks) | **GET** /api/Banks | Obtiene la lista de bancos.
 *CatalogsApi* | [**CatalogsGetCategories**](docs/CatalogsApi.md#catalogsgetcategories) | **GET** /api/Categories | Obtiene la lista de Categorias.
+*CatalogsApi* | [**CatalogsGetCities**](docs/CatalogsApi.md#catalogsgetcities) | **GET** /api/Cities | Obtiene la lista de Ciudades por estado.
 *CatalogsApi* | [**CatalogsGetCurrencies**](docs/CatalogsApi.md#catalogsgetcurrencies) | **GET** /api/Currencies | Obtiene la lista de monedas.
 *CatalogsApi* | [**CatalogsGetLocations**](docs/CatalogsApi.md#catalogsgetlocations) | **GET** /api/Locations | Obtiene la lista de sucursales.
 *CatalogsApi* | [**CatalogsGetPriceLists**](docs/CatalogsApi.md#catalogsgetpricelists) | **GET** /api/PriceLists | Obtiene la lista de precios.
 *CatalogsApi* | [**CatalogsGetSeries**](docs/CatalogsApi.md#catalogsgetseries) | **GET** /api/Series | Obtiene la lista de Series.
+*CatalogsApi* | [**CatalogsGetStates**](docs/CatalogsApi.md#catalogsgetstates) | **GET** /api/States | Obtiene la lista de Estados.
 *CatalogsApi* | [**CatalogsGetUsers**](docs/CatalogsApi.md#catalogsgetusers) | **GET** /api/Users | Obtiene la lista de usuarios.
 *ClientsApi* | [**ClientsAddClient**](docs/ClientsApi.md#clientsaddclient) | **POST** /api/Clients | Agregar Cliente
 *ClientsApi* | [**ClientsDeleteByID**](docs/ClientsApi.md#clientsdeletebyid) | **DELETE** /api/Clients/{id} | Borrar Cliente
@@ -121,14 +123,18 @@ Class | Method | HTTP request | Description
 *ClientsApi* | [**ClientsGetDetails**](docs/ClientsApi.md#clientsgetdetails) | **GET** /api/Clients/{id} | Obtiene los detalles de un cliente.
 *CommentsApi* | [**CommentsAddComment**](docs/CommentsApi.md#commentsaddcomment) | **POST** /api/Comments | Agregar comentario
 *CommentsApi* | [**CommentsGet**](docs/CommentsApi.md#commentsget) | **GET** /api/Comments | Listar comentarios por external ID
+*CreditNotesApi* | [**CreditNotesAddCreditNote**](docs/CreditNotesApi.md#creditnotesaddcreditnote) | **POST** /api/CreditNotes | Agregar Nota de Crédito
+*ExpensesApi* | [**ExpensesGetDetail**](docs/ExpensesApi.md#expensesgetdetail) | **GET** /api/Expenses/{id} | Obtiene los detalles de una orden de gasto.
+*ExpensesApi* | [**ExpensesGetPayment**](docs/ExpensesApi.md#expensesgetpayment) | **GET** /api/Expenses/Payment/{expenseID} | Obtener pagos de una orden de gasto.
 *InventoryApi* | [**InventoryAddInventoryAdjustment**](docs/InventoryApi.md#inventoryaddinventoryadjustment) | **POST** /api/Inventory | Agregar ajuste de inventario.
 *InventoryApi* | [**InventoryGetInventoryByWarehouseID**](docs/InventoryApi.md#inventorygetinventorybywarehouseid) | **GET** /api/Inventory | Obtener inventario por almacén.
-*InvoicesApi* | [**InvoicesAddInvoice**](docs/InvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar factura
-*InvoicesApi* | [**InvoicesAddPayment**](docs/InvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a factura
-*InvoicesApi* | [**InvoicesDeleteInvoice**](docs/InvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{id} | Eliminar factura
-*InvoicesApi* | [**InvoicesGetByID**](docs/InvoicesApi.md#invoicesgetbyid) | **GET** /api/Invoices/{id} | Obtiene los detalles de una venta
-*InvoicesApi* | [**InvoicesGetByNumber**](docs/InvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices | Obtiene los detalles de una venta
+*InvoicesApi* | [**InvoicesAddInvoice**](docs/InvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar Venta
+*InvoicesApi* | [**InvoicesAddPayment**](docs/InvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a venta
+*InvoicesApi* | [**InvoicesDeleteInvoice**](docs/InvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{idOrNumber} | Eliminar factura
+*InvoicesApi* | [**InvoicesGet**](docs/InvoicesApi.md#invoicesget) | **GET** /api/Invoices | Obtiene la lista de ventas.
+*InvoicesApi* | [**InvoicesGetByNumber**](docs/InvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices/{idOrNumber} | Obtiene los detalles de una venta por número
 *InvoicesApi* | [**InvoicesGetPDF**](docs/InvoicesApi.md#invoicesgetpdf) | **GET** /api/Invoices/{id}/pdf | Obtener el PDF de una venta
+*InvoicesApi* | [**InvoicesGetPayment**](docs/InvoicesApi.md#invoicesgetpayment) | **GET** /api/Invoices/Payment/{invoiceID} | Obtener pagos de una factura.
 *InvoicesApi* | [**InvoicesGetXML**](docs/InvoicesApi.md#invoicesgetxml) | **GET** /api/Invoices/{id}/xml | Obtener el XML de una venta
 *OrdersApi* | [**OrdersAddOrder**](docs/OrdersApi.md#ordersaddorder) | **POST** /api/Orders | Agregar pedido
 *OrdersApi* | [**OrdersDeleteOrder**](docs/OrdersApi.md#ordersdeleteorder) | **DELETE** /api/Orders/{id} | Eliminar pedido
@@ -152,10 +158,12 @@ Class | Method | HTTP request | Description
 *ServicesApi* | [**ServicesAddProduct**](docs/ServicesApi.md#servicesaddproduct) | **POST** /api/Services | Agregar Concepto de Venta
 *ServicesApi* | [**ServicesDeleteByID**](docs/ServicesApi.md#servicesdeletebyid) | **DELETE** /api/Services/{id} | Borrar Servicio
 *ServicesApi* | [**ServicesEditProduct**](docs/ServicesApi.md#serviceseditproduct) | **PUT** /api/Services | Editar Concepto de Venta
+*ServicesApi* | [**ServicesGetDetail**](docs/ServicesApi.md#servicesgetdetail) | **GET** /api/Services/{id} | Obtiene los detalles de un servicio.
 *ServicesApi* | [**ServicesGetServices**](docs/ServicesApi.md#servicesgetservices) | **GET** /api/Services | Obtiene la lista de conceptos de venta.
+*UserProfileApi* | [**UserProfileGet**](docs/UserProfileApi.md#userprofileget) | **GET** /api/UserProfile | Obtiene la lista de cuentas contables.
 *WarehousesApi* | [**WarehousesGet**](docs/WarehousesApi.md#warehousesget) | **GET** /api/Warehouses | Obtiene la lista de almacenes.
 *WebHooksApi* | [**WebHooksAddWebHookSubscriptions**](docs/WebHooksApi.md#webhooksaddwebhooksubscriptions) | **POST** /api/WebHookSubscriptions | Suscribirse a un WebHook
-*WebHooksApi* | [**WebHooksDeleteWebHookSubscriptioByID**](docs/WebHooksApi.md#webhooksdeletewebhooksubscriptiobyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
+*WebHooksApi* | [**WebHooksDeleteWebHookSubscriptionByID**](docs/WebHooksApi.md#webhooksdeletewebhooksubscriptionbyid) | **DELETE** /api/WebHookSubscriptions | Borrar suscripción a WebHook
 *WebHooksApi* | [**WebHooksEditWebHookSubscription**](docs/WebHooksApi.md#webhookseditwebhooksubscription) | **PUT** /api/WebHookSubscriptions | Editar suscripción a WebHook
 *WebHooksApi* | [**WebHooksGetWebHookSampleData**](docs/WebHooksApi.md#webhooksgetwebhooksampledata) | **GET** /api/WebHooks/{eventID} | Obtiene un ejemplo del modelo de datos que envía el WebHook.
 *WebHooksApi* | [**WebHooksGetWebHookSubscriptions**](docs/WebHooksApi.md#webhooksgetwebhooksubscriptions) | **GET** /api/WebHookSubscriptions | Obtiene la lista de su suscripciones a WebHooks
@@ -178,6 +186,8 @@ Class | Method | HTTP request | Description
  - [Model.Category1](docs/Category1.md)
  - [Model.Category2](docs/Category2.md)
  - [Model.Category3](docs/Category3.md)
+ - [Model.City](docs/City.md)
+ - [Model.CityPage](docs/CityPage.md)
  - [Model.ClientDetails](docs/ClientDetails.md)
  - [Model.ClientListItem](docs/ClientListItem.md)
  - [Model.ClientListItemPage](docs/ClientListItemPage.md)
@@ -190,8 +200,12 @@ Class | Method | HTTP request | Description
  - [Model.EditClient](docs/EditClient.md)
  - [Model.EditOrder](docs/EditOrder.md)
  - [Model.EditProduct](docs/EditProduct.md)
+ - [Model.EditProspect](docs/EditProspect.md)
  - [Model.EditProvider](docs/EditProvider.md)
  - [Model.EditService](docs/EditService.md)
+ - [Model.EditWebHookSubscription](docs/EditWebHookSubscription.md)
+ - [Model.ExpenseDetails](docs/ExpenseDetails.md)
+ - [Model.ExpensePurchaseOrderItem](docs/ExpensePurchaseOrderItem.md)
  - [Model.FilterClause](docs/FilterClause.md)
  - [Model.FilterQueryOption](docs/FilterQueryOption.md)
  - [Model.FilterQueryValidator](docs/FilterQueryValidator.md)
@@ -211,6 +225,8 @@ Class | Method | HTTP request | Description
  - [Model.InvoiceDetails](docs/InvoiceDetails.md)
  - [Model.InvoiceDetailsProduct](docs/InvoiceDetailsProduct.md)
  - [Model.InvoiceDetailsService](docs/InvoiceDetailsService.md)
+ - [Model.InvoiceListItem](docs/InvoiceListItem.md)
+ - [Model.InvoiceListItemPage](docs/InvoiceListItemPage.md)
  - [Model.Location](docs/Location.md)
  - [Model.LocationPage](docs/LocationPage.md)
  - [Model.NewAccount](docs/NewAccount.md)
@@ -220,6 +236,8 @@ Class | Method | HTTP request | Description
  - [Model.NewAddress](docs/NewAddress.md)
  - [Model.NewClient](docs/NewClient.md)
  - [Model.NewComment](docs/NewComment.md)
+ - [Model.NewCreditNote](docs/NewCreditNote.md)
+ - [Model.NewCreditNotesItem](docs/NewCreditNotesItem.md)
  - [Model.NewInventoryAdjustment](docs/NewInventoryAdjustment.md)
  - [Model.NewInvoice](docs/NewInvoice.md)
  - [Model.NewInvoicePayment](docs/NewInvoicePayment.md)
@@ -230,6 +248,7 @@ Class | Method | HTTP request | Description
  - [Model.NewOrderService](docs/NewOrderService.md)
  - [Model.NewPayment](docs/NewPayment.md)
  - [Model.NewProduct](docs/NewProduct.md)
+ - [Model.NewProspect](docs/NewProspect.md)
  - [Model.NewProvider](docs/NewProvider.md)
  - [Model.NewService](docs/NewService.md)
  - [Model.NewWebHookSubscription](docs/NewWebHookSubscription.md)
@@ -237,17 +256,21 @@ Class | Method | HTTP request | Description
  - [Model.ODataQueryOptionsAccount](docs/ODataQueryOptionsAccount.md)
  - [Model.ODataQueryOptionsBank](docs/ODataQueryOptionsBank.md)
  - [Model.ODataQueryOptionsBankAccount](docs/ODataQueryOptionsBankAccount.md)
+ - [Model.ODataQueryOptionsCity](docs/ODataQueryOptionsCity.md)
  - [Model.ODataQueryOptionsClientListItem](docs/ODataQueryOptionsClientListItem.md)
  - [Model.ODataQueryOptionsComment](docs/ODataQueryOptionsComment.md)
  - [Model.ODataQueryOptionsCurrency](docs/ODataQueryOptionsCurrency.md)
  - [Model.ODataQueryOptionsFlatAccountingJournal](docs/ODataQueryOptionsFlatAccountingJournal.md)
  - [Model.ODataQueryOptionsInventory](docs/ODataQueryOptionsInventory.md)
+ - [Model.ODataQueryOptionsInvoiceListItem](docs/ODataQueryOptionsInvoiceListItem.md)
  - [Model.ODataQueryOptionsLocation](docs/ODataQueryOptionsLocation.md)
+ - [Model.ODataQueryOptionsPaymentListItem](docs/ODataQueryOptionsPaymentListItem.md)
  - [Model.ODataQueryOptionsPriceList](docs/ODataQueryOptionsPriceList.md)
  - [Model.ODataQueryOptionsProduct](docs/ODataQueryOptionsProduct.md)
  - [Model.ODataQueryOptionsProspectListItem](docs/ODataQueryOptionsProspectListItem.md)
  - [Model.ODataQueryOptionsProviderListItem](docs/ODataQueryOptionsProviderListItem.md)
  - [Model.ODataQueryOptionsService](docs/ODataQueryOptionsService.md)
+ - [Model.ODataQueryOptionsState](docs/ODataQueryOptionsState.md)
  - [Model.ODataQueryOptionsUser](docs/ODataQueryOptionsUser.md)
  - [Model.ODataQueryOptionsWarehouse](docs/ODataQueryOptionsWarehouse.md)
  - [Model.ODataQueryOptionsWebHook](docs/ODataQueryOptionsWebHook.md)
@@ -259,6 +282,10 @@ Class | Method | HTTP request | Description
  - [Model.OrderByQueryOption](docs/OrderByQueryOption.md)
  - [Model.OrderByQueryValidator](docs/OrderByQueryValidator.md)
  - [Model.OrderDetails](docs/OrderDetails.md)
+ - [Model.OrderDetailsProduct](docs/OrderDetailsProduct.md)
+ - [Model.OrderDetailsService](docs/OrderDetailsService.md)
+ - [Model.PaymentListItem](docs/PaymentListItem.md)
+ - [Model.PaymentListItemPage](docs/PaymentListItemPage.md)
  - [Model.PriceList](docs/PriceList.md)
  - [Model.PriceListPage](docs/PriceListPage.md)
  - [Model.Product](docs/Product.md)
@@ -268,7 +295,6 @@ Class | Method | HTTP request | Description
  - [Model.ProductPage](docs/ProductPage.md)
  - [Model.ProductPrices](docs/ProductPrices.md)
  - [Model.ProductPricesItems](docs/ProductPricesItems.md)
- - [Model.Prospect](docs/Prospect.md)
  - [Model.ProspectDetails](docs/ProspectDetails.md)
  - [Model.ProspectListItem](docs/ProspectListItem.md)
  - [Model.ProspectListItemPage](docs/ProspectListItemPage.md)
@@ -281,15 +307,19 @@ Class | Method | HTTP request | Description
  - [Model.SelectItem](docs/SelectItem.md)
  - [Model.Series](docs/Series.md)
  - [Model.Service](docs/Service.md)
+ - [Model.ServiceDetails](docs/ServiceDetails.md)
  - [Model.ServicesPage](docs/ServicesPage.md)
  - [Model.SingleValueNode](docs/SingleValueNode.md)
  - [Model.SkipQueryOption](docs/SkipQueryOption.md)
  - [Model.SkipQueryValidator](docs/SkipQueryValidator.md)
+ - [Model.State](docs/State.md)
+ - [Model.StatePage](docs/StatePage.md)
  - [Model.SubGroups](docs/SubGroups.md)
  - [Model.TopQueryOption](docs/TopQueryOption.md)
  - [Model.TopQueryValidator](docs/TopQueryValidator.md)
  - [Model.User](docs/User.md)
  - [Model.UserPage](docs/UserPage.md)
+ - [Model.UserProfile](docs/UserProfile.md)
  - [Model.Warehouse](docs/Warehouse.md)
  - [Model.WarehousePage](docs/WarehousePage.md)
  - [Model.WebHook](docs/WebHook.md)
@@ -301,4 +331,10 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
+<a name="apiKey"></a>
+### apiKey
+
+- **Type**: API key
+- **API key parameter name**: apiKey
+- **Location**: HTTP header
+

@@ -25,7 +25,7 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Agregar factura
+        /// Agregar Venta
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace IO.Swagger.Api
         Guid? InvoicesAddInvoice (NewInvoice newInvoice);
 
         /// <summary>
-        /// Agregar factura
+        /// Agregar Venta
         /// </summary>
         /// <remarks>
         /// 
@@ -46,7 +46,7 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Guid?</returns>
         ApiResponse<Guid?> InvoicesAddInvoiceWithHttpInfo (NewInvoice newInvoice);
         /// <summary>
-        /// Registrar pago a factura
+        /// Registrar pago a venta
         /// </summary>
         /// <remarks>
         /// 
@@ -57,7 +57,7 @@ namespace IO.Swagger.Api
         void InvoicesAddPayment (NewPayment newPayment);
 
         /// <summary>
-        /// Registrar pago a factura
+        /// Registrar pago a venta
         /// </summary>
         /// <remarks>
         /// 
@@ -73,9 +73,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns></returns>
-        void InvoicesDeleteInvoice (Guid? id);
+        void InvoicesDeleteInvoice (string idOrNumber);
 
         /// <summary>
         /// Eliminar factura
@@ -84,51 +84,57 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> InvoicesDeleteInvoiceWithHttpInfo (Guid? id);
+        ApiResponse<Object> InvoicesDeleteInvoiceWithHttpInfo (string idOrNumber);
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene la lista de ventas.
         /// </summary>
         /// <remarks>
-        /// 
+        /// El filtro es opcional
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>InvoiceDetails</returns>
-        InvoiceDetails InvoicesGetByID (Guid? id);
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>InvoiceListItemPage</returns>
+        InvoiceListItemPage InvoicesGet (string filter = null, string orderby = null, int? top = null, int? skip = null);
 
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene la lista de ventas.
         /// </summary>
         /// <remarks>
-        /// 
+        /// El filtro es opcional
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>ApiResponse of InvoiceDetails</returns>
-        ApiResponse<InvoiceDetails> InvoicesGetByIDWithHttpInfo (Guid? id);
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of InvoiceListItemPage</returns>
+        ApiResponse<InvoiceListItemPage> InvoicesGetWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene los detalles de una venta por número
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>InvoiceDetails</returns>
-        InvoiceDetails InvoicesGetByNumber (string number);
+        InvoiceDetails InvoicesGetByNumber (string idOrNumber);
 
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene los detalles de una venta por número
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>ApiResponse of InvoiceDetails</returns>
-        ApiResponse<InvoiceDetails> InvoicesGetByNumberWithHttpInfo (string number);
+        ApiResponse<InvoiceDetails> InvoicesGetByNumberWithHttpInfo (string idOrNumber);
         /// <summary>
         /// Obtener el PDF de una venta
         /// </summary>
@@ -137,8 +143,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Object</returns>
-        Object InvoicesGetPDF (Guid? id);
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream InvoicesGetPDF (Guid? id);
 
         /// <summary>
         /// Obtener el PDF de una venta
@@ -148,8 +154,37 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> InvoicesGetPDFWithHttpInfo (Guid? id);
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> InvoicesGetPDFWithHttpInfo (Guid? id);
+        /// <summary>
+        /// Obtener pagos de una factura.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>PaymentListItemPage</returns>
+        PaymentListItemPage InvoicesGetPayment (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtener pagos de una factura.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of PaymentListItemPage</returns>
+        ApiResponse<PaymentListItemPage> InvoicesGetPaymentWithHttpInfo (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
         /// Obtener el XML de una venta
         /// </summary>
@@ -174,7 +209,7 @@ namespace IO.Swagger.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Agregar factura
+        /// Agregar Venta
         /// </summary>
         /// <remarks>
         /// 
@@ -185,7 +220,7 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<Guid?> InvoicesAddInvoiceAsync (NewInvoice newInvoice);
 
         /// <summary>
-        /// Agregar factura
+        /// Agregar Venta
         /// </summary>
         /// <remarks>
         /// 
@@ -195,7 +230,7 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Guid?)</returns>
         System.Threading.Tasks.Task<ApiResponse<Guid?>> InvoicesAddInvoiceAsyncWithHttpInfo (NewInvoice newInvoice);
         /// <summary>
-        /// Registrar pago a factura
+        /// Registrar pago a venta
         /// </summary>
         /// <remarks>
         /// 
@@ -206,7 +241,7 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task InvoicesAddPaymentAsync (NewPayment newPayment);
 
         /// <summary>
-        /// Registrar pago a factura
+        /// Registrar pago a venta
         /// </summary>
         /// <remarks>
         /// 
@@ -222,9 +257,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task InvoicesDeleteInvoiceAsync (Guid? id);
+        System.Threading.Tasks.Task InvoicesDeleteInvoiceAsync (string idOrNumber);
 
         /// <summary>
         /// Eliminar factura
@@ -233,51 +268,57 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesDeleteInvoiceAsyncWithHttpInfo (Guid? id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesDeleteInvoiceAsyncWithHttpInfo (string idOrNumber);
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene la lista de ventas.
         /// </summary>
         /// <remarks>
-        /// 
+        /// El filtro es opcional
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>Task of InvoiceDetails</returns>
-        System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByIDAsync (Guid? id);
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of InvoiceListItemPage</returns>
+        System.Threading.Tasks.Task<InvoiceListItemPage> InvoicesGetAsync (string filter = null, string orderby = null, int? top = null, int? skip = null);
 
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene la lista de ventas.
         /// </summary>
         /// <remarks>
-        /// 
+        /// El filtro es opcional
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>Task of ApiResponse (InvoiceDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByIDAsyncWithHttpInfo (Guid? id);
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (InvoiceListItemPage)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InvoiceListItemPage>> InvoicesGetAsyncWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene los detalles de una venta por número
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of InvoiceDetails</returns>
-        System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByNumberAsync (string number);
+        System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByNumberAsync (string idOrNumber);
 
         /// <summary>
-        /// Obtiene los detalles de una venta
+        /// Obtiene los detalles de una venta por número
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of ApiResponse (InvoiceDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByNumberAsyncWithHttpInfo (string number);
+        System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByNumberAsyncWithHttpInfo (string idOrNumber);
         /// <summary>
         /// Obtener el PDF de una venta
         /// </summary>
@@ -286,8 +327,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> InvoicesGetPDFAsync (Guid? id);
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> InvoicesGetPDFAsync (Guid? id);
 
         /// <summary>
         /// Obtener el PDF de una venta
@@ -297,8 +338,37 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesGetPDFAsyncWithHttpInfo (Guid? id);
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> InvoicesGetPDFAsyncWithHttpInfo (Guid? id);
+        /// <summary>
+        /// Obtener pagos de una factura.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of PaymentListItemPage</returns>
+        System.Threading.Tasks.Task<PaymentListItemPage> InvoicesGetPaymentAsync (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null);
+
+        /// <summary>
+        /// Obtener pagos de una factura.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (PaymentListItemPage)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PaymentListItemPage>> InvoicesGetPaymentAsyncWithHttpInfo (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null);
         /// <summary>
         /// Obtener el XML de una venta
         /// </summary>
@@ -421,7 +491,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Agregar factura 
+        /// Agregar Venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newInvoice"></param>
@@ -433,7 +503,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Agregar factura 
+        /// Agregar Venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newInvoice"></param>
@@ -502,7 +572,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Agregar factura 
+        /// Agregar Venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newInvoice"></param>
@@ -515,7 +585,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Agregar factura 
+        /// Agregar Venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newInvoice"></param>
@@ -584,7 +654,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Registrar pago a factura 
+        /// Registrar pago a venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newPayment"></param>
@@ -595,7 +665,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Registrar pago a factura 
+        /// Registrar pago a venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newPayment"></param>
@@ -660,7 +730,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Registrar pago a factura 
+        /// Registrar pago a venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newPayment"></param>
@@ -672,7 +742,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Registrar pago a factura 
+        /// Registrar pago a venta 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newPayment"></param>
@@ -740,26 +810,26 @@ namespace IO.Swagger.Api
         /// Eliminar factura 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns></returns>
-        public void InvoicesDeleteInvoice (Guid? id)
+        public void InvoicesDeleteInvoice (string idOrNumber)
         {
-             InvoicesDeleteInvoiceWithHttpInfo(id);
+             InvoicesDeleteInvoiceWithHttpInfo(idOrNumber);
         }
 
         /// <summary>
         /// Eliminar factura 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> InvoicesDeleteInvoiceWithHttpInfo (Guid? id)
+        public ApiResponse<Object> InvoicesDeleteInvoiceWithHttpInfo (string idOrNumber)
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling InvoicesApi->InvoicesDeleteInvoice");
+            // verify the required parameter 'idOrNumber' is set
+            if (idOrNumber == null)
+                throw new ApiException(400, "Missing required parameter 'idOrNumber' when calling InvoicesApi->InvoicesDeleteInvoice");
 
-            var localVarPath = "/api/Invoices/{id}";
+            var localVarPath = "/api/Invoices/{idOrNumber}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -779,7 +849,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (idOrNumber != null) localVarPathParams.Add("idOrNumber", Configuration.ApiClient.ParameterToString(idOrNumber)); // path parameter
 
 
             // make the HTTP request
@@ -804,11 +874,11 @@ namespace IO.Swagger.Api
         /// Eliminar factura 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task InvoicesDeleteInvoiceAsync (Guid? id)
+        public async System.Threading.Tasks.Task InvoicesDeleteInvoiceAsync (string idOrNumber)
         {
-             await InvoicesDeleteInvoiceAsyncWithHttpInfo(id);
+             await InvoicesDeleteInvoiceAsyncWithHttpInfo(idOrNumber);
 
         }
 
@@ -816,15 +886,15 @@ namespace IO.Swagger.Api
         /// Eliminar factura 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesDeleteInvoiceAsyncWithHttpInfo (Guid? id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesDeleteInvoiceAsyncWithHttpInfo (string idOrNumber)
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling InvoicesApi->InvoicesDeleteInvoice");
+            // verify the required parameter 'idOrNumber' is set
+            if (idOrNumber == null)
+                throw new ApiException(400, "Missing required parameter 'idOrNumber' when calling InvoicesApi->InvoicesDeleteInvoice");
 
-            var localVarPath = "/api/Invoices/{id}";
+            var localVarPath = "/api/Invoices/{idOrNumber}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -844,7 +914,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (idOrNumber != null) localVarPathParams.Add("idOrNumber", Configuration.ApiClient.ParameterToString(idOrNumber)); // path parameter
 
 
             // make the HTTP request
@@ -866,167 +936,31 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Obtiene los detalles de una venta 
+        /// Obtiene la lista de ventas. El filtro es opcional
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>InvoiceDetails</returns>
-        public InvoiceDetails InvoicesGetByID (Guid? id)
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>InvoiceListItemPage</returns>
+        public InvoiceListItemPage InvoicesGet (string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
-             ApiResponse<InvoiceDetails> localVarResponse = InvoicesGetByIDWithHttpInfo(id);
+             ApiResponse<InvoiceListItemPage> localVarResponse = InvoicesGetWithHttpInfo(filter, orderby, top, skip);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Obtiene los detalles de una venta 
+        /// Obtiene la lista de ventas. El filtro es opcional
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>ApiResponse of InvoiceDetails</returns>
-        public ApiResponse< InvoiceDetails > InvoicesGetByIDWithHttpInfo (Guid? id)
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of InvoiceListItemPage</returns>
+        public ApiResponse< InvoiceListItemPage > InvoicesGetWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling InvoicesApi->InvoicesGetByID");
-
-            var localVarPath = "/api/Invoices/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InvoicesGetByID", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InvoiceDetails>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InvoiceDetails) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceDetails)));
-        }
-
-        /// <summary>
-        /// Obtiene los detalles de una venta 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>Task of InvoiceDetails</returns>
-        public async System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByIDAsync (Guid? id)
-        {
-             ApiResponse<InvoiceDetails> localVarResponse = await InvoicesGetByIDAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Obtiene los detalles de una venta 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID</param>
-        /// <returns>Task of ApiResponse (InvoiceDetails)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByIDAsyncWithHttpInfo (Guid? id)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling InvoicesApi->InvoicesGetByID");
-
-            var localVarPath = "/api/Invoices/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InvoicesGetByID", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InvoiceDetails>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InvoiceDetails) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceDetails)));
-        }
-
-        /// <summary>
-        /// Obtiene los detalles de una venta 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
-        /// <returns>InvoiceDetails</returns>
-        public InvoiceDetails InvoicesGetByNumber (string number)
-        {
-             ApiResponse<InvoiceDetails> localVarResponse = InvoicesGetByNumberWithHttpInfo(number);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Obtiene los detalles de una venta 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
-        /// <returns>ApiResponse of InvoiceDetails</returns>
-        public ApiResponse< InvoiceDetails > InvoicesGetByNumberWithHttpInfo (string number)
-        {
-            // verify the required parameter 'number' is set
-            if (number == null)
-                throw new ApiException(400, "Missing required parameter 'number' when calling InvoicesApi->InvoicesGetByNumber");
 
             var localVarPath = "/api/Invoices";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1044,6 +978,150 @@ namespace IO.Swagger.Api
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InvoicesGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InvoiceListItemPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InvoiceListItemPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceListItemPage)));
+        }
+
+        /// <summary>
+        /// Obtiene la lista de ventas. El filtro es opcional
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of InvoiceListItemPage</returns>
+        public async System.Threading.Tasks.Task<InvoiceListItemPage> InvoicesGetAsync (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<InvoiceListItemPage> localVarResponse = await InvoicesGetAsyncWithHttpInfo(filter, orderby, top, skip);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Obtiene la lista de ventas. El filtro es opcional
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (InvoiceListItemPage)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InvoiceListItemPage>> InvoicesGetAsyncWithHttpInfo (string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+
+            var localVarPath = "/api/Invoices";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InvoicesGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InvoiceListItemPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InvoiceListItemPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InvoiceListItemPage)));
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de una venta por número 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idOrNumber"></param>
+        /// <returns>InvoiceDetails</returns>
+        public InvoiceDetails InvoicesGetByNumber (string idOrNumber)
+        {
+             ApiResponse<InvoiceDetails> localVarResponse = InvoicesGetByNumberWithHttpInfo(idOrNumber);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Obtiene los detalles de una venta por número 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idOrNumber"></param>
+        /// <returns>ApiResponse of InvoiceDetails</returns>
+        public ApiResponse< InvoiceDetails > InvoicesGetByNumberWithHttpInfo (string idOrNumber)
+        {
+            // verify the required parameter 'idOrNumber' is set
+            if (idOrNumber == null)
+                throw new ApiException(400, "Missing required parameter 'idOrNumber' when calling InvoicesApi->InvoicesGetByNumber");
+
+            var localVarPath = "/api/Invoices/{idOrNumber}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
                 "text/json",
                 "application/xml",
                 "text/xml"
@@ -1052,7 +1130,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (number != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "number", number)); // query parameter
+            if (idOrNumber != null) localVarPathParams.Add("idOrNumber", Configuration.ApiClient.ParameterToString(idOrNumber)); // path parameter
 
 
             // make the HTTP request
@@ -1074,31 +1152,31 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Obtiene los detalles de una venta 
+        /// Obtiene los detalles de una venta por número 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of InvoiceDetails</returns>
-        public async System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByNumberAsync (string number)
+        public async System.Threading.Tasks.Task<InvoiceDetails> InvoicesGetByNumberAsync (string idOrNumber)
         {
-             ApiResponse<InvoiceDetails> localVarResponse = await InvoicesGetByNumberAsyncWithHttpInfo(number);
+             ApiResponse<InvoiceDetails> localVarResponse = await InvoicesGetByNumberAsyncWithHttpInfo(idOrNumber);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Obtiene los detalles de una venta 
+        /// Obtiene los detalles de una venta por número 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number">Serie y Número</param>
+        /// <param name="idOrNumber"></param>
         /// <returns>Task of ApiResponse (InvoiceDetails)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByNumberAsyncWithHttpInfo (string number)
+        public async System.Threading.Tasks.Task<ApiResponse<InvoiceDetails>> InvoicesGetByNumberAsyncWithHttpInfo (string idOrNumber)
         {
-            // verify the required parameter 'number' is set
-            if (number == null)
-                throw new ApiException(400, "Missing required parameter 'number' when calling InvoicesApi->InvoicesGetByNumber");
+            // verify the required parameter 'idOrNumber' is set
+            if (idOrNumber == null)
+                throw new ApiException(400, "Missing required parameter 'idOrNumber' when calling InvoicesApi->InvoicesGetByNumber");
 
-            var localVarPath = "/api/Invoices";
+            var localVarPath = "/api/Invoices/{idOrNumber}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1122,7 +1200,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (number != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "number", number)); // query parameter
+            if (idOrNumber != null) localVarPathParams.Add("idOrNumber", Configuration.ApiClient.ParameterToString(idOrNumber)); // path parameter
 
 
             // make the HTTP request
@@ -1148,10 +1226,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Object</returns>
-        public Object InvoicesGetPDF (Guid? id)
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream InvoicesGetPDF (Guid? id)
         {
-             ApiResponse<Object> localVarResponse = InvoicesGetPDFWithHttpInfo(id);
+             ApiResponse<System.IO.Stream> localVarResponse = InvoicesGetPDFWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -1160,8 +1238,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > InvoicesGetPDFWithHttpInfo (Guid? id)
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > InvoicesGetPDFWithHttpInfo (Guid? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1182,10 +1260,7 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
+                "application/octet-stream"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1207,9 +1282,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
         }
 
         /// <summary>
@@ -1217,10 +1292,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> InvoicesGetPDFAsync (Guid? id)
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> InvoicesGetPDFAsync (Guid? id)
         {
-             ApiResponse<Object> localVarResponse = await InvoicesGetPDFAsyncWithHttpInfo(id);
+             ApiResponse<System.IO.Stream> localVarResponse = await InvoicesGetPDFAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -1230,8 +1305,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> InvoicesGetPDFAsyncWithHttpInfo (Guid? id)
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> InvoicesGetPDFAsyncWithHttpInfo (Guid? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1252,10 +1327,7 @@ namespace IO.Swagger.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
+                "application/octet-stream"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1277,9 +1349,168 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Obtener pagos de una factura. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>PaymentListItemPage</returns>
+        public PaymentListItemPage InvoicesGetPayment (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<PaymentListItemPage> localVarResponse = InvoicesGetPaymentWithHttpInfo(invoiceID, filter, orderby, top, skip);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Obtener pagos de una factura. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>ApiResponse of PaymentListItemPage</returns>
+        public ApiResponse< PaymentListItemPage > InvoicesGetPaymentWithHttpInfo (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+            // verify the required parameter 'invoiceID' is set
+            if (invoiceID == null)
+                throw new ApiException(400, "Missing required parameter 'invoiceID' when calling InvoicesApi->InvoicesGetPayment");
+
+            var localVarPath = "/api/Invoices/Payment/{invoiceID}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (invoiceID != null) localVarPathParams.Add("invoiceID", Configuration.ApiClient.ParameterToString(invoiceID)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InvoicesGetPayment", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PaymentListItemPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PaymentListItemPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaymentListItemPage)));
+        }
+
+        /// <summary>
+        /// Obtener pagos de una factura. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of PaymentListItemPage</returns>
+        public async System.Threading.Tasks.Task<PaymentListItemPage> InvoicesGetPaymentAsync (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+             ApiResponse<PaymentListItemPage> localVarResponse = await InvoicesGetPaymentAsyncWithHttpInfo(invoiceID, filter, orderby, top, skip);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Obtener pagos de una factura. 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="invoiceID"></param>
+        /// <param name="filter">Filters the results, based on a Boolean condition. (optional)</param>
+        /// <param name="orderby">Sorts the results. (optional)</param>
+        /// <param name="top">Returns only the first n results. (optional)</param>
+        /// <param name="skip">Skips the first n results. (optional)</param>
+        /// <returns>Task of ApiResponse (PaymentListItemPage)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PaymentListItemPage>> InvoicesGetPaymentAsyncWithHttpInfo (Guid? invoiceID, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        {
+            // verify the required parameter 'invoiceID' is set
+            if (invoiceID == null)
+                throw new ApiException(400, "Missing required parameter 'invoiceID' when calling InvoicesApi->InvoicesGetPayment");
+
+            var localVarPath = "/api/Invoices/Payment/{invoiceID}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (invoiceID != null) localVarPathParams.Add("invoiceID", Configuration.ApiClient.ParameterToString(invoiceID)); // path parameter
+            if (filter != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
+            if (orderby != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
+            if (top != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
+            if (skip != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "$skip", skip)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InvoicesGetPayment", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PaymentListItemPage>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PaymentListItemPage) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaymentListItemPage)));
         }
 
         /// <summary>

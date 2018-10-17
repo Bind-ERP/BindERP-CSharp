@@ -83,14 +83,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'WarehouseID'
         }
         /// <summary>
-        /// Test the property 'LotImportID'
-        /// </summary>
-        [Test]
-        public void LotImportIDTest()
-        {
-            // TODO unit test for the property 'LotImportID'
-        }
-        /// <summary>
         /// Test the property 'AdjustQty'
         /// </summary>
         [Test]
@@ -113,6 +105,14 @@ namespace IO.Swagger.Test
         public void CommentsTest()
         {
             // TODO unit test for the property 'Comments'
+        }
+        /// <summary>
+        /// Test the property 'LotImportID'
+        /// </summary>
+        [Test]
+        public void LotImportIDTest()
+        {
+            // TODO unit test for the property 'LotImportID'
         }
         /// <summary>
         /// Test the property 'AccountingAccountID'

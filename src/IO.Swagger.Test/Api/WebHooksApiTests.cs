@@ -71,20 +71,21 @@ namespace IO.Swagger.Test
         public void WebHooksAddWebHookSubscriptionsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //NewWebHookSubscription webHookSubscription = null;
-            //var response = instance.WebHooksAddWebHookSubscriptions(webHookSubscription);
+            //NewWebHookSubscription newWebHookSubscription = null;
+            //var response = instance.WebHooksAddWebHookSubscriptions(newWebHookSubscription);
             //Assert.IsInstanceOf<Object> (response, "response is Object");
         }
         
         /// <summary>
-        /// Test WebHooksDeleteWebHookSubscriptioByID
+        /// Test WebHooksDeleteWebHookSubscriptionByID
         /// </summary>
         [Test]
-        public void WebHooksDeleteWebHookSubscriptioByIDTest()
+        public void WebHooksDeleteWebHookSubscriptionByIDTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //instance.WebHooksDeleteWebHookSubscriptioByID(id);
+            //Guid? subscriptionID = null;
+            //instance.WebHooksDeleteWebHookSubscriptionByID(id, subscriptionID);
             
         }
         
@@ -95,7 +96,7 @@ namespace IO.Swagger.Test
         public void WebHooksEditWebHookSubscriptionTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //NewWebHookSubscription webHookSubscription = null;
+            //EditWebHookSubscription webHookSubscription = null;
             //instance.WebHooksEditWebHookSubscription(webHookSubscription);
             
         }

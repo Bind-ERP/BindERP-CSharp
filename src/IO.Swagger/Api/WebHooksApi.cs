@@ -31,9 +31,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Object</returns>
-        Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription webHookSubscription);
+        Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription newWebHookSubscription);
 
         /// <summary>
         /// Suscribirse a un WebHook
@@ -42,9 +42,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> WebHooksAddWebHookSubscriptionsWithHttpInfo (NewWebHookSubscription webHookSubscription);
+        ApiResponse<Object> WebHooksAddWebHookSubscriptionsWithHttpInfo (NewWebHookSubscription newWebHookSubscription);
         /// <summary>
         /// Borrar suscripción a WebHook
         /// </summary>
@@ -53,8 +53,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns></returns>
-        void WebHooksDeleteWebHookSubscriptioByID (string id);
+        void WebHooksDeleteWebHookSubscriptionByID (string id, Guid? subscriptionID = null);
 
         /// <summary>
         /// Borrar suscripción a WebHook
@@ -64,8 +65,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> WebHooksDeleteWebHookSubscriptioByIDWithHttpInfo (string id);
+        ApiResponse<Object> WebHooksDeleteWebHookSubscriptionByIDWithHttpInfo (string id, Guid? subscriptionID = null);
         /// <summary>
         /// Editar suscripción a WebHook
         /// </summary>
@@ -75,7 +77,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns></returns>
-        void WebHooksEditWebHookSubscription (NewWebHookSubscription webHookSubscription);
+        void WebHooksEditWebHookSubscription (EditWebHookSubscription webHookSubscription);
 
         /// <summary>
         /// Editar suscripción a WebHook
@@ -86,7 +88,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> WebHooksEditWebHookSubscriptionWithHttpInfo (NewWebHookSubscription webHookSubscription);
+        ApiResponse<Object> WebHooksEditWebHookSubscriptionWithHttpInfo (EditWebHookSubscription webHookSubscription);
         /// <summary>
         /// Obtiene un ejemplo del modelo de datos que envía el WebHook.
         /// </summary>
@@ -171,9 +173,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> WebHooksAddWebHookSubscriptionsAsync (NewWebHookSubscription webHookSubscription);
+        System.Threading.Tasks.Task<Object> WebHooksAddWebHookSubscriptionsAsync (NewWebHookSubscription newWebHookSubscription);
 
         /// <summary>
         /// Suscribirse a un WebHook
@@ -182,9 +184,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo (NewWebHookSubscription webHookSubscription);
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo (NewWebHookSubscription newWebHookSubscription);
         /// <summary>
         /// Borrar suscripción a WebHook
         /// </summary>
@@ -193,8 +195,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebHooksDeleteWebHookSubscriptioByIDAsync (string id);
+        System.Threading.Tasks.Task WebHooksDeleteWebHookSubscriptionByIDAsync (string id, Guid? subscriptionID = null);
 
         /// <summary>
         /// Borrar suscripción a WebHook
@@ -204,8 +207,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksDeleteWebHookSubscriptioByIDAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksDeleteWebHookSubscriptionByIDAsyncWithHttpInfo (string id, Guid? subscriptionID = null);
         /// <summary>
         /// Editar suscripción a WebHook
         /// </summary>
@@ -215,7 +219,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebHooksEditWebHookSubscriptionAsync (NewWebHookSubscription webHookSubscription);
+        System.Threading.Tasks.Task WebHooksEditWebHookSubscriptionAsync (EditWebHookSubscription webHookSubscription);
 
         /// <summary>
         /// Editar suscripción a WebHook
@@ -226,7 +230,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksEditWebHookSubscriptionAsyncWithHttpInfo (NewWebHookSubscription webHookSubscription);
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksEditWebHookSubscriptionAsyncWithHttpInfo (EditWebHookSubscription webHookSubscription);
         /// <summary>
         /// Obtiene un ejemplo del modelo de datos que envía el WebHook.
         /// </summary>
@@ -406,11 +410,11 @@ namespace IO.Swagger.Api
         /// Suscribirse a un WebHook 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Object</returns>
-        public Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription webHookSubscription)
+        public Object WebHooksAddWebHookSubscriptions (NewWebHookSubscription newWebHookSubscription)
         {
-             ApiResponse<Object> localVarResponse = WebHooksAddWebHookSubscriptionsWithHttpInfo(webHookSubscription);
+             ApiResponse<Object> localVarResponse = WebHooksAddWebHookSubscriptionsWithHttpInfo(newWebHookSubscription);
              return localVarResponse.Data;
         }
 
@@ -418,13 +422,13 @@ namespace IO.Swagger.Api
         /// Suscribirse a un WebHook 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > WebHooksAddWebHookSubscriptionsWithHttpInfo (NewWebHookSubscription webHookSubscription)
+        public ApiResponse< Object > WebHooksAddWebHookSubscriptionsWithHttpInfo (NewWebHookSubscription newWebHookSubscription)
         {
-            // verify the required parameter 'webHookSubscription' is set
-            if (webHookSubscription == null)
-                throw new ApiException(400, "Missing required parameter 'webHookSubscription' when calling WebHooksApi->WebHooksAddWebHookSubscriptions");
+            // verify the required parameter 'newWebHookSubscription' is set
+            if (newWebHookSubscription == null)
+                throw new ApiException(400, "Missing required parameter 'newWebHookSubscription' when calling WebHooksApi->WebHooksAddWebHookSubscriptions");
 
             var localVarPath = "/api/WebHookSubscriptions";
             var localVarPathParams = new Dictionary<String, String>();
@@ -455,13 +459,13 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (webHookSubscription != null && webHookSubscription.GetType() != typeof(byte[]))
+            if (newWebHookSubscription != null && newWebHookSubscription.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(webHookSubscription); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(newWebHookSubscription); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = webHookSubscription; // byte array
+                localVarPostBody = newWebHookSubscription; // byte array
             }
 
 
@@ -487,11 +491,11 @@ namespace IO.Swagger.Api
         /// Suscribirse a un WebHook 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> WebHooksAddWebHookSubscriptionsAsync (NewWebHookSubscription webHookSubscription)
+        public async System.Threading.Tasks.Task<Object> WebHooksAddWebHookSubscriptionsAsync (NewWebHookSubscription newWebHookSubscription)
         {
-             ApiResponse<Object> localVarResponse = await WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo(webHookSubscription);
+             ApiResponse<Object> localVarResponse = await WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo(newWebHookSubscription);
              return localVarResponse.Data;
 
         }
@@ -500,13 +504,13 @@ namespace IO.Swagger.Api
         /// Suscribirse a un WebHook 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webHookSubscription"></param>
+        /// <param name="newWebHookSubscription"></param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo (NewWebHookSubscription webHookSubscription)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksAddWebHookSubscriptionsAsyncWithHttpInfo (NewWebHookSubscription newWebHookSubscription)
         {
-            // verify the required parameter 'webHookSubscription' is set
-            if (webHookSubscription == null)
-                throw new ApiException(400, "Missing required parameter 'webHookSubscription' when calling WebHooksApi->WebHooksAddWebHookSubscriptions");
+            // verify the required parameter 'newWebHookSubscription' is set
+            if (newWebHookSubscription == null)
+                throw new ApiException(400, "Missing required parameter 'newWebHookSubscription' when calling WebHooksApi->WebHooksAddWebHookSubscriptions");
 
             var localVarPath = "/api/WebHookSubscriptions";
             var localVarPathParams = new Dictionary<String, String>();
@@ -537,13 +541,13 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (webHookSubscription != null && webHookSubscription.GetType() != typeof(byte[]))
+            if (newWebHookSubscription != null && newWebHookSubscription.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(webHookSubscription); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(newWebHookSubscription); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = webHookSubscription; // byte array
+                localVarPostBody = newWebHookSubscription; // byte array
             }
 
 
@@ -570,10 +574,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns></returns>
-        public void WebHooksDeleteWebHookSubscriptioByID (string id)
+        public void WebHooksDeleteWebHookSubscriptionByID (string id, Guid? subscriptionID = null)
         {
-             WebHooksDeleteWebHookSubscriptioByIDWithHttpInfo(id);
+             WebHooksDeleteWebHookSubscriptionByIDWithHttpInfo(id, subscriptionID);
         }
 
         /// <summary>
@@ -581,12 +586,13 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> WebHooksDeleteWebHookSubscriptioByIDWithHttpInfo (string id)
+        public ApiResponse<Object> WebHooksDeleteWebHookSubscriptionByIDWithHttpInfo (string id, Guid? subscriptionID = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling WebHooksApi->WebHooksDeleteWebHookSubscriptioByID");
+                throw new ApiException(400, "Missing required parameter 'id' when calling WebHooksApi->WebHooksDeleteWebHookSubscriptionByID");
 
             var localVarPath = "/api/WebHookSubscriptions";
             var localVarPathParams = new Dictionary<String, String>();
@@ -609,6 +615,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (subscriptionID != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "subscriptionID", subscriptionID)); // query parameter
 
 
             // make the HTTP request
@@ -620,7 +627,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("WebHooksDeleteWebHookSubscriptioByID", localVarResponse);
+                Exception exception = ExceptionFactory("WebHooksDeleteWebHookSubscriptionByID", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -634,10 +641,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebHooksDeleteWebHookSubscriptioByIDAsync (string id)
+        public async System.Threading.Tasks.Task WebHooksDeleteWebHookSubscriptionByIDAsync (string id, Guid? subscriptionID = null)
         {
-             await WebHooksDeleteWebHookSubscriptioByIDAsyncWithHttpInfo(id);
+             await WebHooksDeleteWebHookSubscriptionByIDAsyncWithHttpInfo(id, subscriptionID);
 
         }
 
@@ -646,12 +654,13 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="subscriptionID"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksDeleteWebHookSubscriptioByIDAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksDeleteWebHookSubscriptionByIDAsyncWithHttpInfo (string id, Guid? subscriptionID = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling WebHooksApi->WebHooksDeleteWebHookSubscriptioByID");
+                throw new ApiException(400, "Missing required parameter 'id' when calling WebHooksApi->WebHooksDeleteWebHookSubscriptionByID");
 
             var localVarPath = "/api/WebHookSubscriptions";
             var localVarPathParams = new Dictionary<String, String>();
@@ -674,6 +683,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (subscriptionID != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "subscriptionID", subscriptionID)); // query parameter
 
 
             // make the HTTP request
@@ -685,7 +695,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("WebHooksDeleteWebHookSubscriptioByID", localVarResponse);
+                Exception exception = ExceptionFactory("WebHooksDeleteWebHookSubscriptionByID", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -700,7 +710,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns></returns>
-        public void WebHooksEditWebHookSubscription (NewWebHookSubscription webHookSubscription)
+        public void WebHooksEditWebHookSubscription (EditWebHookSubscription webHookSubscription)
         {
              WebHooksEditWebHookSubscriptionWithHttpInfo(webHookSubscription);
         }
@@ -711,7 +721,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> WebHooksEditWebHookSubscriptionWithHttpInfo (NewWebHookSubscription webHookSubscription)
+        public ApiResponse<Object> WebHooksEditWebHookSubscriptionWithHttpInfo (EditWebHookSubscription webHookSubscription)
         {
             // verify the required parameter 'webHookSubscription' is set
             if (webHookSubscription == null)
@@ -776,7 +786,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebHooksEditWebHookSubscriptionAsync (NewWebHookSubscription webHookSubscription)
+        public async System.Threading.Tasks.Task WebHooksEditWebHookSubscriptionAsync (EditWebHookSubscription webHookSubscription)
         {
              await WebHooksEditWebHookSubscriptionAsyncWithHttpInfo(webHookSubscription);
 
@@ -788,7 +798,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webHookSubscription"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksEditWebHookSubscriptionAsyncWithHttpInfo (NewWebHookSubscription webHookSubscription)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> WebHooksEditWebHookSubscriptionAsyncWithHttpInfo (EditWebHookSubscription webHookSubscription)
         {
             // verify the required parameter 'webHookSubscription' is set
             if (webHookSubscription == null)

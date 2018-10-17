@@ -32,8 +32,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Guid?</returns>
-        Guid? ProspectsAddProspect (Prospect newProspect);
+        /// <returns>Object</returns>
+        Object ProspectsAddProspect (NewProspect newProspect);
 
         /// <summary>
         /// Agregar Prospecto
@@ -43,8 +43,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>ApiResponse of Guid?</returns>
-        ApiResponse<Guid?> ProspectsAddProspectWithHttpInfo (Prospect newProspect);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> ProspectsAddProspectWithHttpInfo (NewProspect newProspect);
         /// <summary>
         /// Borrar Prospecto
         /// </summary>
@@ -75,7 +75,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns></returns>
-        void ProspectsEditClient (Prospect prospect);
+        void ProspectsEditClient (EditProspect prospect);
 
         /// <summary>
         /// Editar Prospecto
@@ -86,7 +86,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ProspectsEditClientWithHttpInfo (Prospect prospect);
+        ApiResponse<Object> ProspectsEditClientWithHttpInfo (EditProspect prospect);
         /// <summary>
         /// Obtiene los detalles de un prospecto.
         /// </summary>
@@ -145,8 +145,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Task of Guid?</returns>
-        System.Threading.Tasks.Task<Guid?> ProspectsAddProspectAsync (Prospect newProspect);
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> ProspectsAddProspectAsync (NewProspect newProspect);
 
         /// <summary>
         /// Agregar Prospecto
@@ -156,8 +156,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Task of ApiResponse (Guid?)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Guid?>> ProspectsAddProspectAsyncWithHttpInfo (Prospect newProspect);
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsAddProspectAsyncWithHttpInfo (NewProspect newProspect);
         /// <summary>
         /// Borrar Prospecto
         /// </summary>
@@ -188,7 +188,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ProspectsEditClientAsync (Prospect prospect);
+        System.Threading.Tasks.Task ProspectsEditClientAsync (EditProspect prospect);
 
         /// <summary>
         /// Editar Prospecto
@@ -199,7 +199,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsEditClientAsyncWithHttpInfo (Prospect prospect);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsEditClientAsyncWithHttpInfo (EditProspect prospect);
         /// <summary>
         /// Obtiene los detalles de un prospecto.
         /// </summary>
@@ -353,10 +353,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Guid?</returns>
-        public Guid? ProspectsAddProspect (Prospect newProspect)
+        /// <returns>Object</returns>
+        public Object ProspectsAddProspect (NewProspect newProspect)
         {
-             ApiResponse<Guid?> localVarResponse = ProspectsAddProspectWithHttpInfo(newProspect);
+             ApiResponse<Object> localVarResponse = ProspectsAddProspectWithHttpInfo(newProspect);
              return localVarResponse.Data;
         }
 
@@ -365,8 +365,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>ApiResponse of Guid?</returns>
-        public ApiResponse< Guid? > ProspectsAddProspectWithHttpInfo (Prospect newProspect)
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > ProspectsAddProspectWithHttpInfo (NewProspect newProspect)
         {
             // verify the required parameter 'newProspect' is set
             if (newProspect == null)
@@ -424,9 +424,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Guid?>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Guid?) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -434,10 +434,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Task of Guid?</returns>
-        public async System.Threading.Tasks.Task<Guid?> ProspectsAddProspectAsync (Prospect newProspect)
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> ProspectsAddProspectAsync (NewProspect newProspect)
         {
-             ApiResponse<Guid?> localVarResponse = await ProspectsAddProspectAsyncWithHttpInfo(newProspect);
+             ApiResponse<Object> localVarResponse = await ProspectsAddProspectAsyncWithHttpInfo(newProspect);
              return localVarResponse.Data;
 
         }
@@ -447,8 +447,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="newProspect"></param>
-        /// <returns>Task of ApiResponse (Guid?)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Guid?>> ProspectsAddProspectAsyncWithHttpInfo (Prospect newProspect)
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsAddProspectAsyncWithHttpInfo (NewProspect newProspect)
         {
             // verify the required parameter 'newProspect' is set
             if (newProspect == null)
@@ -506,9 +506,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Guid?>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Guid?) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Guid?)));
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
         /// <summary>
@@ -646,7 +646,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns></returns>
-        public void ProspectsEditClient (Prospect prospect)
+        public void ProspectsEditClient (EditProspect prospect)
         {
              ProspectsEditClientWithHttpInfo(prospect);
         }
@@ -657,7 +657,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ProspectsEditClientWithHttpInfo (Prospect prospect)
+        public ApiResponse<Object> ProspectsEditClientWithHttpInfo (EditProspect prospect)
         {
             // verify the required parameter 'prospect' is set
             if (prospect == null)
@@ -722,7 +722,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ProspectsEditClientAsync (Prospect prospect)
+        public async System.Threading.Tasks.Task ProspectsEditClientAsync (EditProspect prospect)
         {
              await ProspectsEditClientAsyncWithHttpInfo(prospect);
 
@@ -734,7 +734,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="prospect"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsEditClientAsyncWithHttpInfo (Prospect prospect)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ProspectsEditClientAsyncWithHttpInfo (EditProspect prospect)
         {
             // verify the required parameter 'prospect' is set
             if (prospect == null)

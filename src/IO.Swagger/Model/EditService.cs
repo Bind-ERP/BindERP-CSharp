@@ -33,12 +33,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EditService" /> class.
         /// </summary>
-        /// <param name="ID">ID.</param>
-        /// <param name="Code">Code.</param>
-        /// <param name="Title">Title.</param>
-        /// <param name="CurrencyID">CurrencyID.</param>
-        /// <param name="SATCompanyAccountID">SATCompanyAccountID.</param>
-        /// <param name="MeasurementUnit">MeasurementUnit.</param>
+        [JsonConstructorAttribute]
+        protected EditService() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditService" /> class.
+        /// </summary>
+        /// <param name="ID">ID (required).</param>
+        /// <param name="Code">Code (required).</param>
+        /// <param name="Title">Title (required).</param>
+        /// <param name="CurrencyID">CurrencyID (required).</param>
+        /// <param name="SATCompanyAccountID">SATCompanyAccountID (required).</param>
+        /// <param name="MeasurementUnit">MeasurementUnit (required).</param>
         /// <param name="Description">Description.</param>
         /// <param name="Category1ID">Category1ID.</param>
         /// <param name="Category2ID">Category2ID.</param>
@@ -47,12 +52,60 @@ namespace IO.Swagger.Model
         /// <param name="ChargeVAT">ChargeVAT.</param>
         public EditService(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), Guid? CurrencyID = default(Guid?), Guid? SATCompanyAccountID = default(Guid?), string MeasurementUnit = default(string), string Description = default(string), Guid? Category1ID = default(Guid?), Guid? Category2ID = default(Guid?), Guid? Category3ID = default(Guid?), bool? VariableConcept = default(bool?), bool? ChargeVAT = default(bool?))
         {
-            this.ID = ID;
-            this.Code = Code;
-            this.Title = Title;
-            this.CurrencyID = CurrencyID;
-            this.SATCompanyAccountID = SATCompanyAccountID;
-            this.MeasurementUnit = MeasurementUnit;
+            // to ensure "ID" is required (not null)
+            if (ID == null)
+            {
+                throw new InvalidDataException("ID is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.ID = ID;
+            }
+            // to ensure "Code" is required (not null)
+            if (Code == null)
+            {
+                throw new InvalidDataException("Code is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.Code = Code;
+            }
+            // to ensure "Title" is required (not null)
+            if (Title == null)
+            {
+                throw new InvalidDataException("Title is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.Title = Title;
+            }
+            // to ensure "CurrencyID" is required (not null)
+            if (CurrencyID == null)
+            {
+                throw new InvalidDataException("CurrencyID is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.CurrencyID = CurrencyID;
+            }
+            // to ensure "SATCompanyAccountID" is required (not null)
+            if (SATCompanyAccountID == null)
+            {
+                throw new InvalidDataException("SATCompanyAccountID is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.SATCompanyAccountID = SATCompanyAccountID;
+            }
+            // to ensure "MeasurementUnit" is required (not null)
+            if (MeasurementUnit == null)
+            {
+                throw new InvalidDataException("MeasurementUnit is a required property for EditService and cannot be null");
+            }
+            else
+            {
+                this.MeasurementUnit = MeasurementUnit;
+            }
             this.Description = Description;
             this.Category1ID = Category1ID;
             this.Category2ID = Category2ID;

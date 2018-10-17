@@ -75,6 +75,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ID'
         }
         /// <summary>
+        /// Test the property 'UUID'
+        /// </summary>
+        [Test]
+        public void UUIDTest()
+        {
+            // TODO unit test for the property 'UUID'
+        }
+        /// <summary>
         /// Test the property 'Series'
         /// </summary>
         [Test]

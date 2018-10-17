@@ -45,8 +45,10 @@ namespace IO.Swagger.Model
         /// <param name="SalesContact">SalesContact.</param>
         /// <param name="CreditContact">CreditContact.</param>
         /// <param name="Loctaion">Loctaion.</param>
+        /// <param name="LoctaionID">LoctaionID.</param>
         /// <param name="Comments">Comments.</param>
         /// <param name="PriceList">PriceList.</param>
+        /// <param name="PriceListID">PriceListID.</param>
         /// <param name="PaymentTermType">PaymentTermType.</param>
         /// <param name="Email">Email.</param>
         /// <param name="Telephones">Telephones.</param>
@@ -55,7 +57,10 @@ namespace IO.Swagger.Model
         /// <param name="DefaultDiscount">DefaultDiscount.</param>
         /// <param name="ClientSource">ClientSource.</param>
         /// <param name="Account">Account.</param>
-        public ClientDetails(Guid? ID = default(Guid?), string RFC = default(string), string LegalName = default(string), string CommercialName = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), string PaymentMethod = default(string), DateTime? CreationDate = default(DateTime?), string Status = default(string), string SalesContact = default(string), string CreditContact = default(string), string Loctaion = default(string), string Comments = default(string), string PriceList = default(string), string PaymentTermType = default(string), string Email = default(string), string Telephones = default(string), long? Number = default(long?), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string ClientSource = default(string), string Account = default(string))
+        /// <param name="City">City.</param>
+        /// <param name="State">State.</param>
+        /// <param name="Addresses">Addresses.</param>
+        public ClientDetails(Guid? ID = default(Guid?), string RFC = default(string), string LegalName = default(string), string CommercialName = default(string), int? CreditDays = default(int?), double? CreditAmount = default(double?), string PaymentMethod = default(string), DateTime? CreationDate = default(DateTime?), string Status = default(string), string SalesContact = default(string), string CreditContact = default(string), string Loctaion = default(string), Guid? LoctaionID = default(Guid?), string Comments = default(string), string PriceList = default(string), Guid? PriceListID = default(Guid?), string PaymentTermType = default(string), string Email = default(string), string Telephones = default(string), long? Number = default(long?), string AccountNumber = default(string), double? DefaultDiscount = default(double?), string ClientSource = default(string), string Account = default(string), string City = default(string), string State = default(string), List<Guid?> Addresses = default(List<Guid?>))
         {
             this.ID = ID;
             this.RFC = RFC;
@@ -69,8 +74,10 @@ namespace IO.Swagger.Model
             this.SalesContact = SalesContact;
             this.CreditContact = CreditContact;
             this.Loctaion = Loctaion;
+            this.LoctaionID = LoctaionID;
             this.Comments = Comments;
             this.PriceList = PriceList;
+            this.PriceListID = PriceListID;
             this.PaymentTermType = PaymentTermType;
             this.Email = Email;
             this.Telephones = Telephones;
@@ -79,6 +86,9 @@ namespace IO.Swagger.Model
             this.DefaultDiscount = DefaultDiscount;
             this.ClientSource = ClientSource;
             this.Account = Account;
+            this.City = City;
+            this.State = State;
+            this.Addresses = Addresses;
         }
         
         /// <summary>
@@ -154,6 +164,12 @@ namespace IO.Swagger.Model
         public string Loctaion { get; set; }
 
         /// <summary>
+        /// Gets or Sets LoctaionID
+        /// </summary>
+        [DataMember(Name="LoctaionID", EmitDefaultValue=false)]
+        public Guid? LoctaionID { get; set; }
+
+        /// <summary>
         /// Gets or Sets Comments
         /// </summary>
         [DataMember(Name="Comments", EmitDefaultValue=false)]
@@ -164,6 +180,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="PriceList", EmitDefaultValue=false)]
         public string PriceList { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PriceListID
+        /// </summary>
+        [DataMember(Name="PriceListID", EmitDefaultValue=false)]
+        public Guid? PriceListID { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentTermType
@@ -214,6 +236,24 @@ namespace IO.Swagger.Model
         public string Account { get; set; }
 
         /// <summary>
+        /// Gets or Sets City
+        /// </summary>
+        [DataMember(Name="City", EmitDefaultValue=false)]
+        public string City { get; set; }
+
+        /// <summary>
+        /// Gets or Sets State
+        /// </summary>
+        [DataMember(Name="State", EmitDefaultValue=false)]
+        public string State { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Addresses
+        /// </summary>
+        [DataMember(Name="Addresses", EmitDefaultValue=false)]
+        public List<Guid?> Addresses { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -233,8 +273,10 @@ namespace IO.Swagger.Model
             sb.Append("  SalesContact: ").Append(SalesContact).Append("\n");
             sb.Append("  CreditContact: ").Append(CreditContact).Append("\n");
             sb.Append("  Loctaion: ").Append(Loctaion).Append("\n");
+            sb.Append("  LoctaionID: ").Append(LoctaionID).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  PriceList: ").Append(PriceList).Append("\n");
+            sb.Append("  PriceListID: ").Append(PriceListID).Append("\n");
             sb.Append("  PaymentTermType: ").Append(PaymentTermType).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Telephones: ").Append(Telephones).Append("\n");
@@ -243,6 +285,9 @@ namespace IO.Swagger.Model
             sb.Append("  DefaultDiscount: ").Append(DefaultDiscount).Append("\n");
             sb.Append("  ClientSource: ").Append(ClientSource).Append("\n");
             sb.Append("  Account: ").Append(Account).Append("\n");
+            sb.Append("  City: ").Append(City).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -338,6 +383,11 @@ namespace IO.Swagger.Model
                     this.Loctaion.Equals(input.Loctaion))
                 ) && 
                 (
+                    this.LoctaionID == input.LoctaionID ||
+                    (this.LoctaionID != null &&
+                    this.LoctaionID.Equals(input.LoctaionID))
+                ) && 
+                (
                     this.Comments == input.Comments ||
                     (this.Comments != null &&
                     this.Comments.Equals(input.Comments))
@@ -346,6 +396,11 @@ namespace IO.Swagger.Model
                     this.PriceList == input.PriceList ||
                     (this.PriceList != null &&
                     this.PriceList.Equals(input.PriceList))
+                ) && 
+                (
+                    this.PriceListID == input.PriceListID ||
+                    (this.PriceListID != null &&
+                    this.PriceListID.Equals(input.PriceListID))
                 ) && 
                 (
                     this.PaymentTermType == input.PaymentTermType ||
@@ -386,6 +441,21 @@ namespace IO.Swagger.Model
                     this.Account == input.Account ||
                     (this.Account != null &&
                     this.Account.Equals(input.Account))
+                ) && 
+                (
+                    this.City == input.City ||
+                    (this.City != null &&
+                    this.City.Equals(input.City))
+                ) && 
+                (
+                    this.State == input.State ||
+                    (this.State != null &&
+                    this.State.Equals(input.State))
+                ) && 
+                (
+                    this.Addresses == input.Addresses ||
+                    this.Addresses != null &&
+                    this.Addresses.SequenceEqual(input.Addresses)
                 );
         }
 
@@ -422,10 +492,14 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.CreditContact.GetHashCode();
                 if (this.Loctaion != null)
                     hashCode = hashCode * 59 + this.Loctaion.GetHashCode();
+                if (this.LoctaionID != null)
+                    hashCode = hashCode * 59 + this.LoctaionID.GetHashCode();
                 if (this.Comments != null)
                     hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.PriceList != null)
                     hashCode = hashCode * 59 + this.PriceList.GetHashCode();
+                if (this.PriceListID != null)
+                    hashCode = hashCode * 59 + this.PriceListID.GetHashCode();
                 if (this.PaymentTermType != null)
                     hashCode = hashCode * 59 + this.PaymentTermType.GetHashCode();
                 if (this.Email != null)
@@ -442,6 +516,12 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ClientSource.GetHashCode();
                 if (this.Account != null)
                     hashCode = hashCode * 59 + this.Account.GetHashCode();
+                if (this.City != null)
+                    hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.State != null)
+                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.Addresses != null)
+                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
                 return hashCode;
             }
         }

@@ -35,6 +35,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="ID">ID.</param>
         /// <param name="Code">Code.</param>
+        /// <param name="Cost">Cost.</param>
         /// <param name="Title">Title.</param>
         /// <param name="Description">Description.</param>
         /// <param name="CreationDate">CreationDate.</param>
@@ -49,10 +50,11 @@ namespace IO.Swagger.Model
         /// <param name="VariableConcept">VariableConcept.</param>
         /// <param name="SATCode">SATCode.</param>
         /// <param name="SATUnit">SATUnit.</param>
-        public Service(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), Guid? Category1ID = default(Guid?), Guid? Category2ID = default(Guid?), Guid? Category3ID = default(Guid?), bool? ChargeVAT = default(bool?), int? PricingType = default(int?), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), bool? VariableConcept = default(bool?), int? SATCode = default(int?), int? SATUnit = default(int?))
+        public Service(Guid? ID = default(Guid?), string Code = default(string), double? Cost = default(double?), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), Guid? Category1ID = default(Guid?), Guid? Category2ID = default(Guid?), Guid? Category3ID = default(Guid?), bool? ChargeVAT = default(bool?), int? PricingType = default(int?), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), bool? VariableConcept = default(bool?), int? SATCode = default(int?), int? SATUnit = default(int?))
         {
             this.ID = ID;
             this.Code = Code;
+            this.Cost = Cost;
             this.Title = Title;
             this.Description = Description;
             this.CreationDate = CreationDate;
@@ -80,6 +82,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="Code", EmitDefaultValue=false)]
         public string Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cost
+        /// </summary>
+        [DataMember(Name="Cost", EmitDefaultValue=false)]
+        public double? Cost { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -181,6 +189,7 @@ namespace IO.Swagger.Model
             sb.Append("class Service {\n");
             sb.Append("  ID: ").Append(ID).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Cost: ").Append(Cost).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
@@ -239,6 +248,11 @@ namespace IO.Swagger.Model
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
+                ) && 
+                (
+                    this.Cost == input.Cost ||
+                    (this.Cost != null &&
+                    this.Cost.Equals(input.Cost))
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -330,6 +344,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ID.GetHashCode();
                 if (this.Code != null)
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Cost != null)
+                    hashCode = hashCode * 59 + this.Cost.GetHashCode();
                 if (this.Title != null)
                     hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Description != null)

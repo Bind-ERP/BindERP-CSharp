@@ -42,12 +42,12 @@ namespace IO.Swagger.Model
         /// <param name="AccountID">AccountID (required).</param>
         /// <param name="Date">Date (required).</param>
         /// <param name="Reference">Reference (required).</param>
-        /// <param name="Comments">Comments.</param>
         /// <param name="Amount">Amount (required).</param>
         /// <param name="PaymentTerm">PaymentTerm (required).</param>
+        /// <param name="Comments">Comments.</param>
         /// <param name="ExchangeRate">ExchangeRate.</param>
         /// <param name="ExchangeRateAccount">ExchangeRateAccount.</param>
-        public NewPayment(Guid? InvoiceID = default(Guid?), Guid? AccountID = default(Guid?), DateTime? Date = default(DateTime?), string Reference = default(string), string Comments = default(string), double? Amount = default(double?), int? PaymentTerm = default(int?), double? ExchangeRate = default(double?), double? ExchangeRateAccount = default(double?))
+        public NewPayment(Guid? InvoiceID = default(Guid?), Guid? AccountID = default(Guid?), DateTime? Date = default(DateTime?), string Reference = default(string), double? Amount = default(double?), int? PaymentTerm = default(int?), string Comments = default(string), double? ExchangeRate = default(double?), double? ExchangeRateAccount = default(double?))
         {
             // to ensure "InvoiceID" is required (not null)
             if (InvoiceID == null)
@@ -133,12 +133,6 @@ namespace IO.Swagger.Model
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets Comments
-        /// </summary>
-        [DataMember(Name="Comments", EmitDefaultValue=false)]
-        public string Comments { get; set; }
-
-        /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name="Amount", EmitDefaultValue=false)]
@@ -149,6 +143,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="PaymentTerm", EmitDefaultValue=false)]
         public int? PaymentTerm { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Comments
+        /// </summary>
+        [DataMember(Name="Comments", EmitDefaultValue=false)]
+        public string Comments { get; set; }
 
         /// <summary>
         /// Gets or Sets ExchangeRate
@@ -174,9 +174,9 @@ namespace IO.Swagger.Model
             sb.Append("  AccountID: ").Append(AccountID).Append("\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
-            sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  PaymentTerm: ").Append(PaymentTerm).Append("\n");
+            sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  ExchangeRate: ").Append(ExchangeRate).Append("\n");
             sb.Append("  ExchangeRateAccount: ").Append(ExchangeRateAccount).Append("\n");
             sb.Append("}\n");
@@ -234,11 +234,6 @@ namespace IO.Swagger.Model
                     this.Reference.Equals(input.Reference))
                 ) && 
                 (
-                    this.Comments == input.Comments ||
-                    (this.Comments != null &&
-                    this.Comments.Equals(input.Comments))
-                ) && 
-                (
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
@@ -247,6 +242,11 @@ namespace IO.Swagger.Model
                     this.PaymentTerm == input.PaymentTerm ||
                     (this.PaymentTerm != null &&
                     this.PaymentTerm.Equals(input.PaymentTerm))
+                ) && 
+                (
+                    this.Comments == input.Comments ||
+                    (this.Comments != null &&
+                    this.Comments.Equals(input.Comments))
                 ) && 
                 (
                     this.ExchangeRate == input.ExchangeRate ||
@@ -277,12 +277,12 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Date.GetHashCode();
                 if (this.Reference != null)
                     hashCode = hashCode * 59 + this.Reference.GetHashCode();
-                if (this.Comments != null)
-                    hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.Amount != null)
                     hashCode = hashCode * 59 + this.Amount.GetHashCode();
                 if (this.PaymentTerm != null)
                     hashCode = hashCode * 59 + this.PaymentTerm.GetHashCode();
+                if (this.Comments != null)
+                    hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.ExchangeRate != null)
                     hashCode = hashCode * 59 + this.ExchangeRate.GetHashCode();
                 if (this.ExchangeRateAccount != null)

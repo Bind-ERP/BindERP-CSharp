@@ -33,6 +33,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceDetailsProduct" /> class.
         /// </summary>
+        /// <param name="ID">ID.</param>
         /// <param name="ProductID">ProductID.</param>
         /// <param name="Name">Name.</param>
         /// <param name="IndexNumber">IndexNumber.</param>
@@ -46,8 +47,9 @@ namespace IO.Swagger.Model
         /// <param name="Discount">Discount.</param>
         /// <param name="Comments">Comments.</param>
         /// <param name="LotInfo">LotInfo.</param>
-        public InvoiceDetailsProduct(Guid? ProductID = default(Guid?), string Name = default(string), int? IndexNumber = default(int?), string Code = default(string), string Unit = default(string), double? UnitMultiplier = default(double?), double? Qty = default(double?), double? Price = default(double?), double? VATRate = default(double?), double? IEPSRate = default(double?), double? Discount = default(double?), string Comments = default(string), string LotInfo = default(string))
+        public InvoiceDetailsProduct(Guid? ID = default(Guid?), Guid? ProductID = default(Guid?), string Name = default(string), int? IndexNumber = default(int?), string Code = default(string), string Unit = default(string), double? UnitMultiplier = default(double?), double? Qty = default(double?), double? Price = default(double?), double? VATRate = default(double?), double? IEPSRate = default(double?), double? Discount = default(double?), string Comments = default(string), string LotInfo = default(string))
         {
+            this.ID = ID;
             this.ProductID = ProductID;
             this.Name = Name;
             this.IndexNumber = IndexNumber;
@@ -63,6 +65,12 @@ namespace IO.Swagger.Model
             this.LotInfo = LotInfo;
         }
         
+        /// <summary>
+        /// Gets or Sets ID
+        /// </summary>
+        [DataMember(Name="ID", EmitDefaultValue=false)]
+        public Guid? ID { get; set; }
+
         /// <summary>
         /// Gets or Sets ProductID
         /// </summary>
@@ -149,6 +157,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InvoiceDetailsProduct {\n");
+            sb.Append("  ID: ").Append(ID).Append("\n");
             sb.Append("  ProductID: ").Append(ProductID).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IndexNumber: ").Append(IndexNumber).Append("\n");
@@ -196,6 +205,11 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
+                (
+                    this.ID == input.ID ||
+                    (this.ID != null &&
+                    this.ID.Equals(input.ID))
+                ) && 
                 (
                     this.ProductID == input.ProductID ||
                     (this.ProductID != null &&
@@ -272,6 +286,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ID != null)
+                    hashCode = hashCode * 59 + this.ID.GetHashCode();
                 if (this.ProductID != null)
                     hashCode = hashCode * 59 + this.ProductID.GetHashCode();
                 if (this.Name != null)

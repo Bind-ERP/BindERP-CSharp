@@ -123,14 +123,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Phone'
         }
         /// <summary>
-        /// Test the property 'City'
-        /// </summary>
-        [Test]
-        public void CityTest()
-        {
-            // TODO unit test for the property 'City'
-        }
-        /// <summary>
         /// Test the property 'NextContactDate'
         /// </summary>
         [Test]

@@ -67,6 +67,14 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
+        /// Test the property 'ID'
+        /// </summary>
+        [Test]
+        public void IDTest()
+        {
+            // TODO unit test for the property 'ID'
+        }
+        /// <summary>
         /// Test the property 'IndexNumber'
         /// </summary>
         [Test]

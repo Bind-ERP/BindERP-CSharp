@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **ID** | **Guid?** |  | 
 **Title** | **string** |  | 
 **Price** | **double?** |  | 
-**VAT** | **double?** |  | [optional] 
 **Qty** | **double?** |  | 
+**VAT** | **double?** |  | [optional] 
 **Comments** | **string** |  | [optional] 
 **VATExempt** | **bool?** |  | [optional] 
 **IndexNumber** | **int?** |  | [optional] 

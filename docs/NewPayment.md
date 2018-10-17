@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **AccountID** | **Guid?** |  | 
 **Date** | **DateTime?** |  | 
 **Reference** | **string** |  | 
-**Comments** | **string** |  | [optional] 
 **Amount** | **double?** |  | 
 **PaymentTerm** | **int?** |  | 
+**Comments** | **string** |  | [optional] 
 **ExchangeRate** | **double?** |  | [optional] 
 **ExchangeRateAccount** | **double?** |  | [optional] 
 

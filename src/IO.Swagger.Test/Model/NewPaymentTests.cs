@@ -99,14 +99,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Reference'
         }
         /// <summary>
-        /// Test the property 'Comments'
-        /// </summary>
-        [Test]
-        public void CommentsTest()
-        {
-            // TODO unit test for the property 'Comments'
-        }
-        /// <summary>
         /// Test the property 'Amount'
         /// </summary>
         [Test]
@@ -121,6 +113,14 @@ namespace IO.Swagger.Test
         public void PaymentTermTest()
         {
             // TODO unit test for the property 'PaymentTerm'
+        }
+        /// <summary>
+        /// Test the property 'Comments'
+        /// </summary>
+        [Test]
+        public void CommentsTest()
+        {
+            // TODO unit test for the property 'Comments'
         }
         /// <summary>
         /// Test the property 'ExchangeRate'

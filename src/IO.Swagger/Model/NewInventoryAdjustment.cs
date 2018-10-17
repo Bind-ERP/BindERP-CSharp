@@ -40,12 +40,12 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="ProductID">ProductID (required).</param>
         /// <param name="WarehouseID">WarehouseID (required).</param>
-        /// <param name="LotImportID">LotImportID.</param>
         /// <param name="AdjustQty">AdjustQty (required).</param>
         /// <param name="Date">Date (required).</param>
         /// <param name="Comments">Comments (required).</param>
+        /// <param name="LotImportID">LotImportID.</param>
         /// <param name="AccountingAccountID">AccountingAccountID.</param>
-        public NewInventoryAdjustment(Guid? ProductID = default(Guid?), Guid? WarehouseID = default(Guid?), Guid? LotImportID = default(Guid?), double? AdjustQty = default(double?), string Date = default(string), string Comments = default(string), Guid? AccountingAccountID = default(Guid?))
+        public NewInventoryAdjustment(Guid? ProductID = default(Guid?), Guid? WarehouseID = default(Guid?), double? AdjustQty = default(double?), string Date = default(string), string Comments = default(string), Guid? LotImportID = default(Guid?), Guid? AccountingAccountID = default(Guid?))
         {
             // to ensure "ProductID" is required (not null)
             if (ProductID == null)
@@ -109,12 +109,6 @@ namespace IO.Swagger.Model
         public Guid? WarehouseID { get; set; }
 
         /// <summary>
-        /// Gets or Sets LotImportID
-        /// </summary>
-        [DataMember(Name="LotImportID", EmitDefaultValue=false)]
-        public Guid? LotImportID { get; set; }
-
-        /// <summary>
         /// Gets or Sets AdjustQty
         /// </summary>
         [DataMember(Name="AdjustQty", EmitDefaultValue=false)]
@@ -133,6 +127,12 @@ namespace IO.Swagger.Model
         public string Comments { get; set; }
 
         /// <summary>
+        /// Gets or Sets LotImportID
+        /// </summary>
+        [DataMember(Name="LotImportID", EmitDefaultValue=false)]
+        public Guid? LotImportID { get; set; }
+
+        /// <summary>
         /// Gets or Sets AccountingAccountID
         /// </summary>
         [DataMember(Name="AccountingAccountID", EmitDefaultValue=false)]
@@ -148,10 +148,10 @@ namespace IO.Swagger.Model
             sb.Append("class NewInventoryAdjustment {\n");
             sb.Append("  ProductID: ").Append(ProductID).Append("\n");
             sb.Append("  WarehouseID: ").Append(WarehouseID).Append("\n");
-            sb.Append("  LotImportID: ").Append(LotImportID).Append("\n");
             sb.Append("  AdjustQty: ").Append(AdjustQty).Append("\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
+            sb.Append("  LotImportID: ").Append(LotImportID).Append("\n");
             sb.Append("  AccountingAccountID: ").Append(AccountingAccountID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -198,11 +198,6 @@ namespace IO.Swagger.Model
                     this.WarehouseID.Equals(input.WarehouseID))
                 ) && 
                 (
-                    this.LotImportID == input.LotImportID ||
-                    (this.LotImportID != null &&
-                    this.LotImportID.Equals(input.LotImportID))
-                ) && 
-                (
                     this.AdjustQty == input.AdjustQty ||
                     (this.AdjustQty != null &&
                     this.AdjustQty.Equals(input.AdjustQty))
@@ -216,6 +211,11 @@ namespace IO.Swagger.Model
                     this.Comments == input.Comments ||
                     (this.Comments != null &&
                     this.Comments.Equals(input.Comments))
+                ) && 
+                (
+                    this.LotImportID == input.LotImportID ||
+                    (this.LotImportID != null &&
+                    this.LotImportID.Equals(input.LotImportID))
                 ) && 
                 (
                     this.AccountingAccountID == input.AccountingAccountID ||
@@ -237,14 +237,14 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ProductID.GetHashCode();
                 if (this.WarehouseID != null)
                     hashCode = hashCode * 59 + this.WarehouseID.GetHashCode();
-                if (this.LotImportID != null)
-                    hashCode = hashCode * 59 + this.LotImportID.GetHashCode();
                 if (this.AdjustQty != null)
                     hashCode = hashCode * 59 + this.AdjustQty.GetHashCode();
                 if (this.Date != null)
                     hashCode = hashCode * 59 + this.Date.GetHashCode();
                 if (this.Comments != null)
                     hashCode = hashCode * 59 + this.Comments.GetHashCode();
+                if (this.LotImportID != null)
+                    hashCode = hashCode * 59 + this.LotImportID.GetHashCode();
                 if (this.AccountingAccountID != null)
                     hashCode = hashCode * 59 + this.AccountingAccountID.GetHashCode();
                 return hashCode;

@@ -33,6 +33,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceDetailsService" /> class.
         /// </summary>
+        /// <param name="ID">ID.</param>
         /// <param name="IndexNumber">IndexNumber.</param>
         /// <param name="ServiceID">ServiceID.</param>
         /// <param name="Name">Name.</param>
@@ -41,8 +42,9 @@ namespace IO.Swagger.Model
         /// <param name="Price">Price.</param>
         /// <param name="VATRate">VATRate.</param>
         /// <param name="Discount">Discount.</param>
-        public InvoiceDetailsService(int? IndexNumber = default(int?), Guid? ServiceID = default(Guid?), string Name = default(string), string Code = default(string), double? Qty = default(double?), double? Price = default(double?), double? VATRate = default(double?), double? Discount = default(double?))
+        public InvoiceDetailsService(Guid? ID = default(Guid?), int? IndexNumber = default(int?), Guid? ServiceID = default(Guid?), string Name = default(string), string Code = default(string), double? Qty = default(double?), double? Price = default(double?), double? VATRate = default(double?), double? Discount = default(double?))
         {
+            this.ID = ID;
             this.IndexNumber = IndexNumber;
             this.ServiceID = ServiceID;
             this.Name = Name;
@@ -53,6 +55,12 @@ namespace IO.Swagger.Model
             this.Discount = Discount;
         }
         
+        /// <summary>
+        /// Gets or Sets ID
+        /// </summary>
+        [DataMember(Name="ID", EmitDefaultValue=false)]
+        public Guid? ID { get; set; }
+
         /// <summary>
         /// Gets or Sets IndexNumber
         /// </summary>
@@ -109,6 +117,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InvoiceDetailsService {\n");
+            sb.Append("  ID: ").Append(ID).Append("\n");
             sb.Append("  IndexNumber: ").Append(IndexNumber).Append("\n");
             sb.Append("  ServiceID: ").Append(ServiceID).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -151,6 +160,11 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
+                (
+                    this.ID == input.ID ||
+                    (this.ID != null &&
+                    this.ID.Equals(input.ID))
+                ) && 
                 (
                     this.IndexNumber == input.IndexNumber ||
                     (this.IndexNumber != null &&
@@ -202,6 +216,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ID != null)
+                    hashCode = hashCode * 59 + this.ID.GetHashCode();
                 if (this.IndexNumber != null)
                     hashCode = hashCode * 59 + this.IndexNumber.GetHashCode();
                 if (this.ServiceID != null)

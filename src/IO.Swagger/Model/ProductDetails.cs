@@ -59,10 +59,12 @@ namespace IO.Swagger.Model
         /// <param name="IEPSRate">IEPSRate.</param>
         /// <param name="Type">Type.</param>
         /// <param name="ProductionAuto">ProductionAuto.</param>
+        /// <param name="Volume">Volume.</param>
+        /// <param name="Weight">Weight.</param>
         /// <param name="Prices">Prices.</param>
         /// <param name="Inventories">Inventories.</param>
         /// <param name="AlternativeUnits">AlternativeUnits.</param>
-        public ProductDetails(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), double? Cost = default(double?), string SKU = default(string), string Comments = default(string), int? CostType = default(int?), Guid? Category1ID = default(Guid?), string Category1 = default(string), Guid? Category2ID = default(Guid?), string Category2 = default(string), Guid? Category3ID = default(Guid?), string Category3 = default(string), double? CurrentInventory = default(double?), bool? ChargeVAT = default(bool?), int? Number = default(int?), int? PricingType = default(int?), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), int? PurchaseType = default(int?), double? IEPSRate = default(double?), int? Type = default(int?), bool? ProductionAuto = default(bool?), ProductPrices Prices = default(ProductPrices), List<ProductInventories> Inventories = default(List<ProductInventories>), List<ProductAlternativeUnits> AlternativeUnits = default(List<ProductAlternativeUnits>))
+        public ProductDetails(Guid? ID = default(Guid?), string Code = default(string), string Title = default(string), string Description = default(string), DateTime? CreationDate = default(DateTime?), double? Cost = default(double?), string SKU = default(string), string Comments = default(string), int? CostType = default(int?), Guid? Category1ID = default(Guid?), string Category1 = default(string), Guid? Category2ID = default(Guid?), string Category2 = default(string), Guid? Category3ID = default(Guid?), string Category3 = default(string), double? CurrentInventory = default(double?), bool? ChargeVAT = default(bool?), int? Number = default(int?), int? PricingType = default(int?), string Unit = default(string), Guid? CurrencyID = default(Guid?), string CurrencyCode = default(string), int? PurchaseType = default(int?), double? IEPSRate = default(double?), int? Type = default(int?), bool? ProductionAuto = default(bool?), double? Volume = default(double?), double? Weight = default(double?), ProductPrices Prices = default(ProductPrices), List<ProductInventories> Inventories = default(List<ProductInventories>), List<ProductAlternativeUnits> AlternativeUnits = default(List<ProductAlternativeUnits>))
         {
             this.ID = ID;
             this.Code = Code;
@@ -90,6 +92,8 @@ namespace IO.Swagger.Model
             this.IEPSRate = IEPSRate;
             this.Type = Type;
             this.ProductionAuto = ProductionAuto;
+            this.Volume = Volume;
+            this.Weight = Weight;
             this.Prices = Prices;
             this.Inventories = Inventories;
             this.AlternativeUnits = AlternativeUnits;
@@ -252,6 +256,18 @@ namespace IO.Swagger.Model
         public bool? ProductionAuto { get; set; }
 
         /// <summary>
+        /// Gets or Sets Volume
+        /// </summary>
+        [DataMember(Name="Volume", EmitDefaultValue=false)]
+        public double? Volume { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Weight
+        /// </summary>
+        [DataMember(Name="Weight", EmitDefaultValue=false)]
+        public double? Weight { get; set; }
+
+        /// <summary>
         /// Gets or Sets Prices
         /// </summary>
         [DataMember(Name="Prices", EmitDefaultValue=false)]
@@ -303,6 +319,8 @@ namespace IO.Swagger.Model
             sb.Append("  IEPSRate: ").Append(IEPSRate).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  ProductionAuto: ").Append(ProductionAuto).Append("\n");
+            sb.Append("  Volume: ").Append(Volume).Append("\n");
+            sb.Append("  Weight: ").Append(Weight).Append("\n");
             sb.Append("  Prices: ").Append(Prices).Append("\n");
             sb.Append("  Inventories: ").Append(Inventories).Append("\n");
             sb.Append("  AlternativeUnits: ").Append(AlternativeUnits).Append("\n");
@@ -471,6 +489,16 @@ namespace IO.Swagger.Model
                     this.ProductionAuto.Equals(input.ProductionAuto))
                 ) && 
                 (
+                    this.Volume == input.Volume ||
+                    (this.Volume != null &&
+                    this.Volume.Equals(input.Volume))
+                ) && 
+                (
+                    this.Weight == input.Weight ||
+                    (this.Weight != null &&
+                    this.Weight.Equals(input.Weight))
+                ) && 
+                (
                     this.Prices == input.Prices ||
                     (this.Prices != null &&
                     this.Prices.Equals(input.Prices))
@@ -548,6 +576,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.ProductionAuto != null)
                     hashCode = hashCode * 59 + this.ProductionAuto.GetHashCode();
+                if (this.Volume != null)
+                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.Weight != null)
+                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.Prices != null)
                     hashCode = hashCode * 59 + this.Prices.GetHashCode();
                 if (this.Inventories != null)

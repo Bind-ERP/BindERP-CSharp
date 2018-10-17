@@ -41,14 +41,14 @@ namespace IO.Swagger.Model
         /// <param name="ID">ID (required).</param>
         /// <param name="Title">Title (required).</param>
         /// <param name="Price">Price (required).</param>
-        /// <param name="VAT">VAT.</param>
         /// <param name="Qty">Qty (required).</param>
+        /// <param name="VAT">VAT.</param>
         /// <param name="Comments">Comments.</param>
         /// <param name="VATExempt">VATExempt.</param>
         /// <param name="IndexNumber">IndexNumber.</param>
         /// <param name="VariableConcept">VariableConcept.</param>
         /// <param name="OrderItemID">OrderItemID.</param>
-        public NewInvoiceService(Guid? ID = default(Guid?), string Title = default(string), double? Price = default(double?), double? VAT = default(double?), double? Qty = default(double?), string Comments = default(string), bool? VATExempt = default(bool?), int? IndexNumber = default(int?), bool? VariableConcept = default(bool?), Guid? OrderItemID = default(Guid?))
+        public NewInvoiceService(Guid? ID = default(Guid?), string Title = default(string), double? Price = default(double?), double? Qty = default(double?), double? VAT = default(double?), string Comments = default(string), bool? VATExempt = default(bool?), int? IndexNumber = default(int?), bool? VariableConcept = default(bool?), Guid? OrderItemID = default(Guid?))
         {
             // to ensure "ID" is required (not null)
             if (ID == null)
@@ -113,16 +113,16 @@ namespace IO.Swagger.Model
         public double? Price { get; set; }
 
         /// <summary>
-        /// Gets or Sets VAT
-        /// </summary>
-        [DataMember(Name="VAT", EmitDefaultValue=false)]
-        public double? VAT { get; set; }
-
-        /// <summary>
         /// Gets or Sets Qty
         /// </summary>
         [DataMember(Name="Qty", EmitDefaultValue=false)]
         public double? Qty { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VAT
+        /// </summary>
+        [DataMember(Name="VAT", EmitDefaultValue=false)]
+        public double? VAT { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
@@ -165,8 +165,8 @@ namespace IO.Swagger.Model
             sb.Append("  ID: ").Append(ID).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  VAT: ").Append(VAT).Append("\n");
             sb.Append("  Qty: ").Append(Qty).Append("\n");
+            sb.Append("  VAT: ").Append(VAT).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  VATExempt: ").Append(VATExempt).Append("\n");
             sb.Append("  IndexNumber: ").Append(IndexNumber).Append("\n");
@@ -222,14 +222,14 @@ namespace IO.Swagger.Model
                     this.Price.Equals(input.Price))
                 ) && 
                 (
-                    this.VAT == input.VAT ||
-                    (this.VAT != null &&
-                    this.VAT.Equals(input.VAT))
-                ) && 
-                (
                     this.Qty == input.Qty ||
                     (this.Qty != null &&
                     this.Qty.Equals(input.Qty))
+                ) && 
+                (
+                    this.VAT == input.VAT ||
+                    (this.VAT != null &&
+                    this.VAT.Equals(input.VAT))
                 ) && 
                 (
                     this.Comments == input.Comments ||
@@ -273,10 +273,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.VAT != null)
-                    hashCode = hashCode * 59 + this.VAT.GetHashCode();
                 if (this.Qty != null)
                     hashCode = hashCode * 59 + this.Qty.GetHashCode();
+                if (this.VAT != null)
+                    hashCode = hashCode * 59 + this.VAT.GetHashCode();
                 if (this.Comments != null)
                     hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.VATExempt != null)

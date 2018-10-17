@@ -67,22 +67,6 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
-        /// Test the property 'ExternalID'
-        /// </summary>
-        [Test]
-        public void ExternalIDTest()
-        {
-            // TODO unit test for the property 'ExternalID'
-        }
-        /// <summary>
-        /// Test the property 'ExternalIDType'
-        /// </summary>
-        [Test]
-        public void ExternalIDTypeTest()
-        {
-            // TODO unit test for the property 'ExternalIDType'
-        }
-        /// <summary>
         /// Test the property 'Comment'
         /// </summary>
         [Test]
@@ -161,6 +145,22 @@ namespace IO.Swagger.Test
         public void RepetitionsTest()
         {
             // TODO unit test for the property 'Repetitions'
+        }
+        /// <summary>
+        /// Test the property 'ExternalID'
+        /// </summary>
+        [Test]
+        public void ExternalIDTest()
+        {
+            // TODO unit test for the property 'ExternalID'
+        }
+        /// <summary>
+        /// Test the property 'ExternalIDType'
+        /// </summary>
+        [Test]
+        public void ExternalIDTypeTest()
+        {
+            // TODO unit test for the property 'ExternalIDType'
         }
 
     }

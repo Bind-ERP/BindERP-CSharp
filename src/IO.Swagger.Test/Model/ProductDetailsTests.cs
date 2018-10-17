@@ -275,6 +275,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ProductionAuto'
         }
         /// <summary>
+        /// Test the property 'Volume'
+        /// </summary>
+        [Test]
+        public void VolumeTest()
+        {
+            // TODO unit test for the property 'Volume'
+        }
+        /// <summary>
+        /// Test the property 'Weight'
+        /// </summary>
+        [Test]
+        public void WeightTest()
+        {
+            // TODO unit test for the property 'Weight'
+        }
+        /// <summary>
         /// Test the property 'Prices'
         /// </summary>
         [Test]

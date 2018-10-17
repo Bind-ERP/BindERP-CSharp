@@ -163,6 +163,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Loctaion'
         }
         /// <summary>
+        /// Test the property 'LoctaionID'
+        /// </summary>
+        [Test]
+        public void LoctaionIDTest()
+        {
+            // TODO unit test for the property 'LoctaionID'
+        }
+        /// <summary>
         /// Test the property 'Comments'
         /// </summary>
         [Test]
@@ -177,6 +185,14 @@ namespace IO.Swagger.Test
         public void PriceListTest()
         {
             // TODO unit test for the property 'PriceList'
+        }
+        /// <summary>
+        /// Test the property 'PriceListID'
+        /// </summary>
+        [Test]
+        public void PriceListIDTest()
+        {
+            // TODO unit test for the property 'PriceListID'
         }
         /// <summary>
         /// Test the property 'PaymentTermType'
@@ -241,6 +257,30 @@ namespace IO.Swagger.Test
         public void AccountTest()
         {
             // TODO unit test for the property 'Account'
+        }
+        /// <summary>
+        /// Test the property 'City'
+        /// </summary>
+        [Test]
+        public void CityTest()
+        {
+            // TODO unit test for the property 'City'
+        }
+        /// <summary>
+        /// Test the property 'State'
+        /// </summary>
+        [Test]
+        public void StateTest()
+        {
+            // TODO unit test for the property 'State'
+        }
+        /// <summary>
+        /// Test the property 'Addresses'
+        /// </summary>
+        [Test]
+        public void AddressesTest()
+        {
+            // TODO unit test for the property 'Addresses'
         }
 
     }

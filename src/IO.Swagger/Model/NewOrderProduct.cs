@@ -40,18 +40,18 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="ID">ID (required).</param>
         /// <param name="Price">Price (required).</param>
+        /// <param name="Qty">Qty (required).</param>
         /// <param name="VAT">VAT.</param>
         /// <param name="IndexNumber">IndexNumber.</param>
         /// <param name="IEPS">IEPS.</param>
         /// <param name="IEPSType">IEPSType.</param>
-        /// <param name="Qty">Qty (required).</param>
         /// <param name="Comments">Comments.</param>
         /// <param name="VATExempt">VATExempt.</param>
         /// <param name="RequireLot">RequireLot.</param>
         /// <param name="SelectedImports">SelectedImports.</param>
         /// <param name="OrderItemID">OrderItemID.</param>
         /// <param name="Unit">Unit.</param>
-        public NewOrderProduct(Guid? ID = default(Guid?), double? Price = default(double?), double? VAT = default(double?), int? IndexNumber = default(int?), double? IEPS = default(double?), int? IEPSType = default(int?), double? Qty = default(double?), string Comments = default(string), bool? VATExempt = default(bool?), bool? RequireLot = default(bool?), List<Guid?> SelectedImports = default(List<Guid?>), Guid? OrderItemID = default(Guid?), string Unit = default(string))
+        public NewOrderProduct(Guid? ID = default(Guid?), double? Price = default(double?), double? Qty = default(double?), double? VAT = default(double?), int? IndexNumber = default(int?), double? IEPS = default(double?), int? IEPSType = default(int?), string Comments = default(string), bool? VATExempt = default(bool?), bool? RequireLot = default(bool?), List<Guid?> SelectedImports = default(List<Guid?>), Guid? OrderItemID = default(Guid?), string Unit = default(string))
         {
             // to ensure "ID" is required (not null)
             if (ID == null)
@@ -105,6 +105,12 @@ namespace IO.Swagger.Model
         public double? Price { get; set; }
 
         /// <summary>
+        /// Gets or Sets Qty
+        /// </summary>
+        [DataMember(Name="Qty", EmitDefaultValue=false)]
+        public double? Qty { get; set; }
+
+        /// <summary>
         /// Gets or Sets VAT
         /// </summary>
         [DataMember(Name="VAT", EmitDefaultValue=false)]
@@ -127,12 +133,6 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="IEPSType", EmitDefaultValue=false)]
         public int? IEPSType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Qty
-        /// </summary>
-        [DataMember(Name="Qty", EmitDefaultValue=false)]
-        public double? Qty { get; set; }
 
         /// <summary>
         /// Gets or Sets Comments
@@ -180,11 +180,11 @@ namespace IO.Swagger.Model
             sb.Append("class NewOrderProduct {\n");
             sb.Append("  ID: ").Append(ID).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  Qty: ").Append(Qty).Append("\n");
             sb.Append("  VAT: ").Append(VAT).Append("\n");
             sb.Append("  IndexNumber: ").Append(IndexNumber).Append("\n");
             sb.Append("  IEPS: ").Append(IEPS).Append("\n");
             sb.Append("  IEPSType: ").Append(IEPSType).Append("\n");
-            sb.Append("  Qty: ").Append(Qty).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  VATExempt: ").Append(VATExempt).Append("\n");
             sb.Append("  RequireLot: ").Append(RequireLot).Append("\n");
@@ -236,6 +236,11 @@ namespace IO.Swagger.Model
                     this.Price.Equals(input.Price))
                 ) && 
                 (
+                    this.Qty == input.Qty ||
+                    (this.Qty != null &&
+                    this.Qty.Equals(input.Qty))
+                ) && 
+                (
                     this.VAT == input.VAT ||
                     (this.VAT != null &&
                     this.VAT.Equals(input.VAT))
@@ -254,11 +259,6 @@ namespace IO.Swagger.Model
                     this.IEPSType == input.IEPSType ||
                     (this.IEPSType != null &&
                     this.IEPSType.Equals(input.IEPSType))
-                ) && 
-                (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
                 ) && 
                 (
                     this.Comments == input.Comments ||
@@ -305,6 +305,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ID.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.Qty != null)
+                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
                 if (this.VAT != null)
                     hashCode = hashCode * 59 + this.VAT.GetHashCode();
                 if (this.IndexNumber != null)
@@ -313,8 +315,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.IEPS.GetHashCode();
                 if (this.IEPSType != null)
                     hashCode = hashCode * 59 + this.IEPSType.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
                 if (this.Comments != null)
                     hashCode = hashCode * 59 + this.Comments.GetHashCode();
                 if (this.VATExempt != null)

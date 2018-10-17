@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Date'
         }
         /// <summary>
+        /// Test the property 'JournalItems'
+        /// </summary>
+        [Test]
+        public void JournalItemsTest()
+        {
+            // TODO unit test for the property 'JournalItems'
+        }
+        /// <summary>
         /// Test the property 'Comments'
         /// </summary>
         [Test]
@@ -97,14 +105,6 @@ namespace IO.Swagger.Test
         public void LocationIDTest()
         {
             // TODO unit test for the property 'LocationID'
-        }
-        /// <summary>
-        /// Test the property 'JournalItems'
-        /// </summary>
-        [Test]
-        public void JournalItemsTest()
-        {
-            // TODO unit test for the property 'JournalItems'
         }
 
     }
