@@ -73,7 +73,11 @@ No authorization required
 
 <a name="webhooksdeletewebhooksubscriptionbyid"></a>
 # **WebHooksDeleteWebHookSubscriptionByID**
+<<<<<<< HEAD
 > void WebHooksDeleteWebHookSubscriptionByID (string id, Guid? subscriptionID = null)
+=======
+> void WebHooksDeleteWebHookSubscriptionByID (string id)
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 
 Borrar suscripción a WebHook
 
@@ -98,7 +102,11 @@ namespace Example
             try
             {
                 // Borrar suscripción a WebHook
+<<<<<<< HEAD
                 apiInstance.WebHooksDeleteWebHookSubscriptionByID(id, subscriptionID);
+=======
+                apiInstance.WebHooksDeleteWebHookSubscriptionByID(id);
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
             }
             catch (Exception e)
             {

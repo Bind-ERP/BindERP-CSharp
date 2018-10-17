@@ -3,7 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **ID** | **Guid?** |  | [optional] 
+=======
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 **Serie** | **string** |  | [optional] 
 **Date** | **DateTime?** |  | [optional] 
 **Number** | **long?** |  | [optional] 
@@ -26,6 +29,10 @@ Name | Type | Description | Notes
 **LocationID** | **Guid?** |  | [optional] 
 **WarehouseID** | **Guid?** |  | [optional] 
 **PriceListID** | **Guid?** |  | [optional] 
+<<<<<<< HEAD
+=======
+**CFDIID** | **Guid?** |  | [optional] 
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 **CFDIUse** | **int?** |  | [optional] 
 **ExchangeRate** | **double?** |  | [optional] 
 **VATRetRate** | **double?** |  | [optional] 

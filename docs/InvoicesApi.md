@@ -6,7 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InvoicesAddInvoice**](InvoicesApi.md#invoicesaddinvoice) | **POST** /api/Invoices | Agregar Venta
 [**InvoicesAddPayment**](InvoicesApi.md#invoicesaddpayment) | **POST** /api/Invoices/Payment | Registrar pago a venta
+<<<<<<< HEAD
 [**InvoicesDeleteInvoice**](InvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{idOrNumber} | Eliminar factura
+=======
+[**InvoicesDeleteInvoice**](InvoicesApi.md#invoicesdeleteinvoice) | **DELETE** /api/Invoices/{id} | Eliminar factura
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 [**InvoicesGet**](InvoicesApi.md#invoicesget) | **GET** /api/Invoices | Obtiene la lista de ventas.
 [**InvoicesGetByNumber**](InvoicesApi.md#invoicesgetbynumber) | **GET** /api/Invoices/{idOrNumber} | Obtiene los detalles de una venta por número
 [**InvoicesGetPDF**](InvoicesApi.md#invoicesgetpdf) | **GET** /api/Invoices/{id}/pdf | Obtener el PDF de una venta
@@ -371,6 +375,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+<<<<<<< HEAD
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -438,6 +443,8 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json
+=======
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

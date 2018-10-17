@@ -27,8 +27,11 @@ Name | Type | Description | Notes
 **DefaultDiscount** | **double?** |  | [optional] 
 **ClientSource** | **string** |  | [optional] 
 **Account** | **string** |  | [optional] 
+<<<<<<< HEAD
 **City** | **string** |  | [optional] 
 **State** | **string** |  | [optional] 
+=======
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 **Addresses** | **List&lt;Guid?&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

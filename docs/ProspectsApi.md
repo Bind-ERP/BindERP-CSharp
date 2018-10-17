@@ -13,7 +13,11 @@ Method | HTTP request | Description
 
 <a name="prospectsaddprospect"></a>
 # **ProspectsAddProspect**
+<<<<<<< HEAD
 > Object ProspectsAddProspect (NewProspect newProspect)
+=======
+> Guid? ProspectsAddProspect (NewProspect newProspect)
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 
 Agregar Prospecto
 

@@ -6,6 +6,10 @@ Name | Type | Description | Notes
 **ID** | **Guid?** |  | 
 **Price** | **double?** |  | 
 **Qty** | **double?** |  | 
+<<<<<<< HEAD
+=======
+**Unit** | **string** |  | 
+>>>>>>> 00a0f02ad3caf59a4284f6cc77ac538a3fc20070
 **VAT** | **double?** |  | [optional] 
 **IndexNumber** | **int?** |  | [optional] 
 **IEPS** | **double?** |  | [optional] 
